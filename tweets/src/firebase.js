@@ -9,7 +9,6 @@ const {
   REACT_APP_STORAGEBUCKET,
   REACT_APP_MESSAGINGSENDERID,
   REACT_APP_APPID,
-  REACT_APP_MEASUREMENTID,
 } = process.env;
 
 const config = {
@@ -20,7 +19,6 @@ const config = {
   storageBucket: REACT_APP_STORAGEBUCKET,
   messagingSenderId: REACT_APP_MESSAGINGSENDERID,
   appId: REACT_APP_APPID,
-  measurementId: REACT_APP_MEASUREMENTID,
 };
 
 app.initializeApp(config);
