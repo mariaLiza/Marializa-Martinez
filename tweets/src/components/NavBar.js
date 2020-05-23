@@ -4,9 +4,7 @@ import { NavLink } from "react-router-dom";
 import { logout } from "../util/firebaseFunctions";
 import { AuthContext } from "../providers/AuthContext";
 
-
 // import { useInput } from "../util/customHooks";
-// import Home from "../components/Home";
 
 const NavBar = (params) => {
   //   const search = useInput("");
@@ -14,7 +12,12 @@ const NavBar = (params) => {
 
   const displayButtons = () => {
     if (currentUser) {
-      return <button onClick={logout}>Log Out</button>;
+      return (
+        <>
+          <button onClick={logout}>Log Out</button>
+          <NavLink to="/profile">Profile</NavLink>
+        </>
+      );
     } else {
       return (
         <>
@@ -38,7 +41,6 @@ const NavBar = (params) => {
       {/* <NavLink exact to="/users/:id">
         User Profile
       </NavLink> */}
-      <NavLink to="/profile">Profile</NavLink>
     </nav>
   );
 };
