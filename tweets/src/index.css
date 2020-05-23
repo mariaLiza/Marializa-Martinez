@@ -48,6 +48,11 @@ table {
 	border-spacing: 0;
 }
 
+body {
+    -ms-overflow-style: scrollbar;
+    overflow-y: scroll;
+    overscroll-behavior-y: none;
+}
 
 /* body {
   margin: 0;

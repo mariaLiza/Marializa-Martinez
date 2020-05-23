@@ -1,6 +1,56 @@
 nav {
   display: flex;
+  padding: 8px;
   justify-content: space-evenly;
+  border: 1px solid #8899a6;
+  height: 2.5em;
+  text-align: center;
+}
 
-  /* look at pokemon assessment for navbar css */
+#home {
+  width: 3em;
+  height: auto;
+}
+
+#login {
+  border: 1px solid #1da1f2;
+  border-radius: 20px;
+  text-justify: distribute;
+  cursor: pointer;
+  color: #1da1f2;
+  font-family: Arial;
+  font-size: 1em;
+  font-weight: bolder;
+  width: 90px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  text-decoration: none;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+#signup {
+  background-color: #1da1f2;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 1em;
+  font-weight: bolder;
+  width: 90px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  text-decoration: none;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.active:hover {
+  background-color: #1a91da;
+}
+.active:active {
+  position: relative;
+  top: 1px;
 }

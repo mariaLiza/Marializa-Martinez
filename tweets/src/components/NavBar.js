@@ -3,6 +3,7 @@ import "../css/NavBar.css";
 import { NavLink } from "react-router-dom";
 import { logout } from "../util/firebaseFunctions";
 import { AuthContext } from "../providers/AuthContext";
+import whiteBird from "../images/utilityIcons/whiteBird.png";
 
 // import { useInput } from "../util/customHooks";
 
@@ -21,11 +22,11 @@ const NavBar = (params) => {
     } else {
       return (
         <>
-          <NavLink exact to="/login">
-            Log In
+          <NavLink activeClassName="active" id="login" exact to="/login">
+            <div>Log In</div>
           </NavLink>
-          <NavLink exact to="/signup">
-            Sign Up
+          <NavLink activeClassName="active" id="signup" exact to="/signup">
+            <div>Sign Up</div>
           </NavLink>
         </>
       );
@@ -35,7 +36,7 @@ const NavBar = (params) => {
   return (
     <nav>
       <NavLink exact to="/">
-        Home
+        <img activeClassName="active" id="home" src={whiteBird} alt="home" />
       </NavLink>
       {displayButtons()}
       {/* <NavLink exact to="/users/:id">
@@ -45,10 +46,7 @@ const NavBar = (params) => {
   );
 };
 
-{
-  /* once signed in     */
-}
-
+//for searching by hashtag on navbar
 {
   /* <form
           onSubmit={(e) => {
@@ -64,15 +62,6 @@ const NavBar = (params) => {
             {...search}
           />
         </form> */
-}
-{
-  /* <NavLink
-          to="/login"
-        //   onClick={() => setLoggedIn(false)}
-          //   className="navAnchor"
-        >
-          Logout
-        </NavLink> */
 }
 
 export default NavBar;
