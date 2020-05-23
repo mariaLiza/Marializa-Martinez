@@ -21,9 +21,6 @@ const Signup = () => {
       await axios.post(`${API}/api/users`, {
         id: res.user.uid,
         email,
-        // fullName,
-        // userName,
-        // bio,
       });
       history.push("/");
     } catch (err) {

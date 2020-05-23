@@ -1,26 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import "../css/NavBar.css";
 import { NavLink } from "react-router-dom";
+import { logout } from "../util/firebaseFunctions";
+import { AuthContext } from "../providers/AuthContext";
+
+
 // import { useInput } from "../util/customHooks";
 // import Home from "../components/Home";
 
-const NavBar = () => {
+const NavBar = (params) => {
   //   const search = useInput("");
+  const { currentUser } = useContext(AuthContext);
+
+  const displayButtons = () => {
+    if (currentUser) {
+      return <button onClick={logout}>Log Out</button>;
+    } else {
+      return (
+        <>
+          <NavLink exact to="/login">
+            Log In
+          </NavLink>
+          <NavLink exact to="/signup">
+            Sign Up
+          </NavLink>
+        </>
+      );
+    }
+  };
 
   return (
     <nav>
       <NavLink exact to="/">
         Home
       </NavLink>
-      <NavLink exact to="/login">
-        Log In
-      </NavLink>
-      <NavLink exact to="/signup">
-        Sign Up
-      </NavLink>
-      <NavLink exact to="/users/:id">
+      {displayButtons()}
+      {/* <NavLink exact to="/users/:id">
         User Profile
-      </NavLink>
+      </NavLink> */}
+      <NavLink to="/profile">Profile</NavLink>
     </nav>
   );
 };
@@ -28,11 +46,7 @@ const NavBar = () => {
 {
   /* once signed in     */
 }
-{
-  /* <NavLink to="/profile" >
-          Profile
-        </NavLink> */
-}
+
 {
   /* <form
           onSubmit={(e) => {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import axios from "axios";
 import { useHistory } from "react-router-dom";
+import {login} from "../util/firebaseFunctions"
 // import { apiURL } from "../util/apiURL";
 
 const Login = () => {
@@ -13,6 +14,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      await login(email, password)
       history.push("/");
     } catch (err) {
       setError(err.message);

@@ -8,30 +8,33 @@ import Footer from "./components/Footer";
 import "./App.css";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
+import AuthProvider from "./providers/AuthContext";
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/signup">
-          <Signup />
-        </Route>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/users/:id">
-          <UserProfile />
-        </Route>
+      <AuthProvider>
+        <NavBar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/signup">
+            <Signup />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/profile">
+            <UserProfile />
+          </Route>
 
-        {/* <Route path="*">
+          {/* <Route path="*">
           <Error />
         </Route> */}
-      </Switch>
-      <Footer />
+        </Switch>
+        <Footer />
+      </AuthProvider>
     </div>
   );
 }
