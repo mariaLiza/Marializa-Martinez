@@ -17,20 +17,20 @@ DROP TABLE IF EXISTS tags;
 
 CREATE TABLE users
 (
-  id SERIAL PRIMARY KEY,
-  full_name TEXT NOT NULL,
+  id VARCHAR PRIMARY KEY,
+  fullname TEXT,
   email TEXT NOT NULL UNIQUE,
-  username TEXT UNIQUE NOT NULL,
-  bio TEXT NOT NULL
+  username TEXT UNIQUE,
+  bio TEXT
 );
 
 CREATE TABLE posts
 (
   id SERIAL PRIMARY KEY,
   caption TEXT,
-  poster_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-  picture TEXT,
-  created_at TEXT NOT NULL
+  poster_id VARCHAR NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  body TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
 
@@ -41,17 +41,3 @@ CREATE TABLE tags
   tag TEXT NOT NULL
 );
 
-INSERT INTO users
-  (full_name, email, username, bio)
-VALUES
-  ('Marializa Martinez', 'mariamartinez@pursuit.org', 'marializa0414', 'Animator turned chocolatier');
- 
-
-
-INSERT INTO posts
-  (poster_id, caption,picture,created_at)
-VALUES(1, 'heyy', '/public/uploads/IMG_6040.jpeg', '2020-05-21T05:36:00');
-
-INSERT INTO tags
-  (post_id,tag)
-VALUES(1, 'TAG1');  
