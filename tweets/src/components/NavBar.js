@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { logout } from "../util/firebaseFunctions";
 import { AuthContext } from "../providers/AuthContext";
 import whiteBird from "../images/utilityIcons/whiteBird.png";
+import profilePic from "../images/sidebarIcons/profile white.png";
 
 // import { useInput } from "../util/customHooks";
 
@@ -15,8 +16,18 @@ const NavBar = (params) => {
     if (currentUser) {
       return (
         <>
-          <button onClick={logout}>Log Out</button>
-          <NavLink to="/profile">Profile</NavLink>
+          <a id="logout" onClick={logout}>
+            Log Out
+          </a>
+          <NavLink id="profile" to="/profile">
+            Profile{" "}
+            <img
+              activeClassName="active"
+              id="profilePic"
+              src={profilePic}
+              alt="profile image"
+            />
+          </NavLink>
         </>
       );
     } else {
