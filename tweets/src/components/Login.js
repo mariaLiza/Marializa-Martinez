@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import axios from "axios";
 import { NavLink, useHistory } from "react-router-dom";
 import { login } from "../util/firebaseFunctions";
 // import { apiURL } from "../util/apiURL";

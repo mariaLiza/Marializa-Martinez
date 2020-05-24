@@ -1,0 +1,39 @@
+/* light grey text #8899a6 
+dark input color #192734
+dark div color #39434c
+light blue classic #1da1f2
+*/
+
+#sbDiv {
+  display: flex;
+  float: right;
+  border-radius: 10px;
+  border: 1px solid #8899a6;
+  height: auto;
+  width: 20em;
+  margin-right: 20%;
+  padding: 10px;
+}
+
+.sideBarForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#sidePic {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 15em;
+    height: auto;
+    padding: 5%;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#sbH {
+    display: flex;
+    text-align: start;
+    font-size: larger;
+    padding: 10px;
+}
