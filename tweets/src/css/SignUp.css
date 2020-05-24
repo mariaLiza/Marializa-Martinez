@@ -1,0 +1,64 @@
+/* light grey text #8899a6 
+dark input color #192734
+dark div color #39434c
+light blue classic #1da1f2
+*/
+
+#bird {
+    width: 3em;
+    height: auto;
+}
+
+#signUpDiv {
+    flex-direction: column;
+    margin: auto;
+    margin-top: 10px;
+    width: 45%;
+    height: 80%;
+    background-color: #39434c;
+    border-radius: 12px;
+    align-items: stretch;
+    border: 0 solid black;
+    box-sizing: border-box;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+#create {
+    display: flex;
+    float: left;
+    padding: 20px;
+    margin: 10px;
+    font-size: x-large;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 10px;
+}
+
+#nextBtn {
+    display: flex;
+    justify-content: space-around;
+    background-color: #1da1f2;
+    border-radius: 20px;
+    border-color: #39434c;
+    text-align: center;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 1em;
+    font-weight: bolder;
+    width: 85px;
+    height: auto;
+    text-decoration: none;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 20px;
+}

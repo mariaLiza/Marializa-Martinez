@@ -2,7 +2,7 @@ nav {
   display: flex;
   padding: 8px;
   justify-content: space-evenly;
-  border: 1px solid #8899a6;
+  border-bottom: 1px solid #8899a6;
   height: 2.5em;
   text-align: center;
 }
@@ -48,7 +48,7 @@ nav {
   padding-right: 16px;
 }
 .active:hover {
-  background-color: #1a91da;
+  background-color: #1779b6;
 }
 .active:active {
   position: relative;

@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { apiURL } from "../util/apiURL";
 import { signUp } from "../util/firebaseFunctions";
+import "../css/SignUp.css";
+import whiteBird from "../images/utilityIcons/whiteBird.png";
 
 const Signup = () => {
   const [error, setError] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [fullName, setFullName] = useState("");
-  // const [userName, setUserName] = useState("");
-  // const [bio, setBio] = useState("");
   const history = useHistory();
   const API = apiURL();
 
@@ -30,38 +29,30 @@ const Signup = () => {
 
   return (
     <>
-      <div>
-        <h1>Sign Up</h1>
+      <div id="signUpDiv">
+        <NavLink exact to="/">
+          <img id="bird" src={whiteBird} alt="home" />
+        </NavLink>
+        <h1 id="create">Create your account</h1>
         {error ? <div>{error}</div> : null}
-        <form onSubmit={handleSubmit}>
+        <form class="form" id="formInp" onSubmit={handleSubmit}>
           <input
             placeholder="Email"
+            id="email"
             value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}
           />
           <input
             placeholder="Password"
             type="password"
+            id="password"
             value={password}
             autoComplete="on"
             onChange={(e) => setPassword(e.currentTarget.value)}
           />
-          {/* <input
-            placeholder="Full Name"
-            value={fullName}
-            onChange={(e) => setFullName(e.currentTarget.value)}
-          /> */}
-          {/* <input
-            placeholder="User Name"
-            value={userName}
-            onChange={(e) => setUserName(e.currentTarget.value)}
-          /> */}
-          {/* <input
-            placeholder="Bio"
-            value={bio}
-            onChange={(e) => setBio(e.currentTarget.value)}
-          /> */}
-          <button type="submit">Sign Up</button>
+          <button id="nextBtn" type="submit">
+            Next
+          </button>
         </form>
       </div>
     </>
