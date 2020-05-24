@@ -1,0 +1,22 @@
+/* <div id="dateDiv" class="date"> */
+        /* <h4 id="dob">Date of birth</h4>
+        <p id="dobInfo"> */
+
+#dob {
+    display: flex;
+    justify-content: stretch;
+    font-weight: bolder;
+    margin-left: 30px;
+    font-size: medium;
+    padding-bottom: 5px;
+}
+
+#dobInfo {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    color: #8899a6;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: medium;
+}

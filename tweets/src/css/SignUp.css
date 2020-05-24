@@ -15,7 +15,7 @@ light blue classic #1da1f2
   margin-top: 10px;
   width: 45%;
   height: 80%;
-  background-color: #39434c;
+  background-color: #39434c78;
   border-radius: 12px;
   align-items: stretch;
   border: 0 solid black;
@@ -42,23 +42,29 @@ light blue classic #1da1f2
 }
 
 .form > input {
-  padding: 1em;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-bottom: 40px;
   background-color: #192734;
   border-radius: 3px;
+  font-size: 1em;
+  color: #8899a6;
+}
+
+input:focus {
   color: #1da1f2;
-  font-size: medium;
+  border-bottom: 2px solid #1da1f2;
+}
+
+.suLabel {
+  color: #1da1f2;
 }
 
 input {
-  border-top: 2px #8899a6;
-  border-left: 2px #8899a6;
-  border-right: 2px #8899a6;
-}
-
-input::placeholder {
-  font-size: medium;
-  display: flex;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #8899a6;
 }
 
 input:focus {

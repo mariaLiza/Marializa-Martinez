@@ -5,6 +5,7 @@ import { apiURL } from "../util/apiURL";
 import { signUp } from "../util/firebaseFunctions";
 import "../css/SignUp.css";
 import whiteBird from "../images/utilityIcons/whiteBird.png";
+import GetDatePicker from "./DatePicker";
 
 const Signup = () => {
   const [error, setError] = useState(null);
@@ -36,14 +37,18 @@ const Signup = () => {
         <h1 id="create">Create your account</h1>
         {error ? <div>{error}</div> : null}
         <form class="form" id="formInp" onSubmit={handleSubmit}>
+          <label class="suLabel" id="emLabel">
+            Email
+          </label>
           <input
-            placeholder="Email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}
           />
+          <label class="suLabel" id="pwLabel">
+            Password
+          </label>
           <input
-            placeholder="Password"
             type="password"
             id="password"
             value={password}
@@ -54,6 +59,7 @@ const Signup = () => {
             Next
           </button>
         </form>
+        <GetDatePicker />
       </div>
     </>
   );

@@ -5,11 +5,19 @@ nav {
   border-bottom: 1px solid #8899a6;
   height: 2.5em;
   text-align: center;
+  width: 101%;
+  position: sticky;
+  top: 0;
 }
 
 #home {
   width: 3em;
   height: auto;
+}
+
+#home:active {
+  position: relative;
+  top: 1px;
 }
 
 #login {
@@ -53,6 +61,15 @@ nav {
 .active:active {
   position: relative;
   top: 1px;
+  background-color: #1779b6;
+}
+
+#signup:hover {
+  background-color: #1779b6;
+}
+
+#login:hover {
+  background-color: #1779b6;
 }
 
 #logout {
@@ -71,6 +88,10 @@ nav {
   padding-bottom: 5px;
   padding-left: 16px;
   padding-right: 16px;
+}
+
+#logout:hover {
+  background-color: #1779b6;
 }
 
 #profilePic {

@@ -22,7 +22,7 @@ const NavBar = (params) => {
           <NavLink id="profile" to="/profile">
             Profile{" "}
             <img
-              activeClassName="active"
+              className="active"
               id="profilePic"
               src={profilePic}
               alt="profile image"
@@ -33,10 +33,10 @@ const NavBar = (params) => {
     } else {
       return (
         <>
-          <NavLink activeClassName="active" id="login" exact to="/login">
+          <NavLink className="active" id="login" exact to="/login">
             <div>Log In</div>
           </NavLink>
-          <NavLink activeClassName="active" id="signup" exact to="/signup">
+          <NavLink className="active" id="signup" exact to="/signup">
             <div>Sign Up</div>
           </NavLink>
         </>
@@ -47,7 +47,7 @@ const NavBar = (params) => {
   return (
     <nav>
       <NavLink exact to="/">
-        <img activeClassName="active" id="home" src={whiteBird} alt="home" />
+        <img id="home" src={whiteBird} alt="home" />
       </NavLink>
       {displayButtons()}
       {/* <NavLink exact to="/users/:id">

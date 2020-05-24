@@ -22,8 +22,8 @@ light blue classic #1da1f2
   margin: auto;
   margin-top: 10px;
   align-items: stretch;
-  /* border: 0 solid black;
-    box-sizing: border-box; */
+  border: 0 solid black;
+    box-sizing: border-box;
   display: flex;
   flex-basis: auto;
   flex-direction: column;
@@ -77,4 +77,12 @@ label {
 
 #logInbtn:hover {
   background-color: #1779b6;
+}
+
+#suft {
+    text-decoration: none;
+    color: #1da0f2e1;
+    padding: 25px;
+    font-size: 1em;
+    font-weight: lighter;
 }

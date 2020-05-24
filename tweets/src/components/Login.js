@@ -34,18 +34,22 @@ const Login = () => {
         <form class="lForm" id="lFormInp" onSubmit={handleSubmit}>
           <label id="email">Email</label>
           <input
-          class="input"
+            class="input"
             value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}
           />
           <label id="password">Password</label>
           <input
-          class="input"
+            class="input"
+            type="password"
             value={password}
             autoComplete="on"
             onChange={(e) => setPassword(e.currentTarget.value)}
           />
-          <button id="logInbtn" type="submit">Log In</button>
+          <button id="logInbtn" type="submit">
+            Log In
+          </button>
+          <NavLink id="suft" exact to="/signup">Sign up for Twitter</NavLink>
         </form>
       </div>
     </>
