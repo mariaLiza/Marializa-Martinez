@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 // import axios from "axios";
-import { useHistory } from "react-router-dom";
-import {login} from "../util/firebaseFunctions"
+import { NavLink, useHistory } from "react-router-dom";
+import { login } from "../util/firebaseFunctions";
 // import { apiURL } from "../util/apiURL";
-import "../css/Login.css"
+import whiteBird from "../images/utilityIcons/whiteBird.png";
+import "../css/Login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,33 +16,36 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await login(email, password)
+      await login(email, password);
       history.push("/");
     } catch (err) {
       setError(err.message);
     }
-    //sign in with firebase then change route
   };
 
   return (
     <>
-      <div>
-        <h1>Log In</h1>
+      <div id="logInDiv">
         {error ? <div>{error}</div> : null}
-        <form onSubmit={handleSubmit}>
+        <NavLink exact to="/">
+          <img id="bird" src={whiteBird} alt="home" />
+        </NavLink>
+        <h1 id="title">Log in to Twitter</h1>
+        <form class="lForm" id="lFormInp" onSubmit={handleSubmit}>
+          <label id="email">Email</label>
           <input
-            placeholder="Email"
+          class="input"
             value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}
           />
+          <label id="password">Password</label>
           <input
-            placeholder="Password"
-            type="password"
+          class="input"
             value={password}
             autoComplete="on"
             onChange={(e) => setPassword(e.currentTarget.value)}
           />
-          <button type="submit">Log In</button>
+          <button id="logInbtn" type="submit">Log In</button>
         </form>
       </div>
     </>

@@ -1,0 +1,80 @@
+/* light grey text #8899a6 
+dark input color #192734
+dark div color #39434c
+light blue classic #1da1f2
+*/
+
+#bird {
+  width: 4em;
+  height: auto;
+}
+
+#title {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  font-size: x-large;
+  padding: 10px;
+}
+
+#logInDiv {
+  flex-direction: column;
+  margin: auto;
+  margin-top: 10px;
+  align-items: stretch;
+  /* border: 0 solid black;
+    box-sizing: border-box; */
+  display: flex;
+  flex-basis: auto;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.lForm {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 5px;
+  margin: auto;
+}
+
+label {
+  color: #1da1f2;
+  display: flex;
+  flex-flow: initial;
+  padding: 10px;
+  background-color: #192734;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.input {
+  background-color: whitesmoke;
+  padding: 5px;
+  margin-bottom: 20px;
+  font-size: small;
+  border-bottom: 2px solid #1da1f2;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+#logInbtn {
+  display: flex;
+  justify-content: space-around;
+  background-color: #1da1f2;
+  border-radius: 25px;
+  border-color: #39434c;
+  text-align: center;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 1em;
+  font-weight: bolder;
+  width: auto;
+  height: 3.5em;
+  text-decoration: none;
+}
+
+#logInbtn:hover {
+  background-color: #1779b6;
+}
