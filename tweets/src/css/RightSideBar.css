@@ -8,32 +8,110 @@ light blue classic #1da1f2
   display: flex;
   float: right;
   border-radius: 10px;
-  border: 1px solid #8899a6;
-  height: auto;
-  width: 20em;
-  margin-right: 20%;
+  border: 0.5px solid #8899a69a;
+  height: max-content;
+  width: 18em;
+  margin-right: 15%;
+  margin-bottom: 10px;
   padding: 10px;
 }
 
 .sideBarForm {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
 #sidePic {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 15em;
-    height: auto;
-    padding: 5%;
-    margin-bottom: 10px;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 15em;
+  height: auto;
+  padding: 10px;
+ 
+  position: relative;
 }
 
 #sbH {
-    display: flex;
-    text-align: start;
-    font-size: larger;
-    padding: 10px;
+  display: flex;
+  text-align: start;
+  font-size: larger;
+  padding: 10px;
+}
+
+.sbLabels {
+  font-size: 12pt;
+  text-align: justify;
+  border-top-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.sbInput {
+  font-size: 1.2em;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+#pwInputSide {
+  margin-bottom: 1em;
+}
+
+p {
+  color: #8899a6;
+  margin-top: 10px;
+}
+
+#signUpSide {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  background-color: #1da1f2;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 1em;
+  font-weight: bolder;
+  height: 2em;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+#logInSide {
+  margin-top: 5px;
+  border-radius: 20px;
+  text-justify: distribute;
+  cursor: pointer;
+  border: 1px solid #1da1f2;
+  color: #1da1f2;
+  font-family: Arial;
+  font-size: 1em;
+  font-weight: bolder;
+  height: auto;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #15202b;
+}
+
+#logInSide:hover {
+  background-color: #1779b6;
+}
+
+#signUpSide:hover {
+  background-color: #1779b6;
+}
+
+#empty {
+    height: 1em;
+    width: auto;
 }

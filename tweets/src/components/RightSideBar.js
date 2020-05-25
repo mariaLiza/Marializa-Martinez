@@ -3,6 +3,7 @@ import { NavLink, useHistory } from "react-router-dom";
 import "../css/RightSideBar.css";
 import pic from "../images/sidebarIcons/twitter_login_sidebar_illustration.png";
 import { login } from "../util/firebaseFunctions";
+import Footer from "./Footer"
 
 const RightSideBar = () => {
   const [email, setEmail] = useState("");
@@ -25,23 +26,32 @@ const RightSideBar = () => {
         <form id="sbForm" class="sideBarForm" onSubmit={handleSubmit}>
           <img id="sidePic" src={pic} alt="see what's happening" />
           <h4 id="sbH">See what’s happening in the world right now</h4>
-          <label>Email</label>
+          <label class="sbLabels">Email</label>
           <input
+            class="sbInput"
             value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}
           />
-          <label id="password">Password</label>
+          <label class="sbLabels">Password</label>
           <input
+            id="pwInputSide"
+            class="sbInput"
             value={password}
             onChange={(e) => setPassword(e.currentTarget.value)}
           />
-          <button type="submit">Log In</button>
+          <button id="logInSide" type="submit">
+            Log In
+          </button>
           <p>or</p>
-          <NavLink id="suft" exact to="/signup">
+          <NavLink id="signUpSide" exact to="/signup">
             Sign up
           </NavLink>
         </form>
       </div>
+      <br/>
+      <br/>
+      <br/>
+      <Footer/>
     </>
   );
 };

@@ -3,12 +3,10 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import UserProfile from "./components/UserProfile";
-import Footer from "./components/Footer";
-
-import "./App.css";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import AuthProvider from "./providers/AuthContext";
+import "./App.css";
 
 function App() {
   return (
@@ -33,7 +31,6 @@ function App() {
           <Error />
         </Route> */}
         </Switch>
-        <Footer />
       </AuthProvider>
     </div>
   );

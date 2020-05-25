@@ -1,6 +1,6 @@
 nav {
   display: flex;
-  padding: 8px;
+  padding: 10px;
   justify-content: space-evenly;
   border-bottom: 1px solid #8899a6;
   height: 2.5em;
@@ -13,6 +13,8 @@ nav {
 #home {
   width: 3em;
   height: auto;
+  padding-bottom: 20px;
+  margin-top: 0;
 }
 
 #home:active {
