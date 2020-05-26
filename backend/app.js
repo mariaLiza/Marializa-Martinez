@@ -19,7 +19,7 @@ app.use(express.static(path.resolve(__dirname, "./public")));
 //routes here
 app.use("/api/users", usersRouter);
 // app.use("/api/posts", postsRouter);
-// app.use("/api/tags", tagsRouter);
+app.use("/api/tags", tagsRouter);
 
 //error handling
 app.use((err, req, res, next) => {

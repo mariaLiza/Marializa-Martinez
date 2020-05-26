@@ -3,7 +3,7 @@
 const users = require("express").Router();
 
 const {
-  getUserById,
+  // getUserById,
   createNewUser,
   // isUserExisting,
   // logIn,
@@ -15,7 +15,7 @@ const {
 //nested
 // users.use("/:id/posts", userPostsRoutes);
 // isUserExisting
-users.get("/:id", getUserById);
+// users.get("/:id", getUserById);
 users.post("/", createNewUser);
 
 // users.get("/", getAllUsers);

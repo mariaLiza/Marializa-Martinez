@@ -23,19 +23,19 @@ const db = require("../../db/index");
 //   }
 // };
 
-const getUserById = async (req, res, next) => {
-  const { id } = req.params;
-  try {
-    let user = await db.one("SELECT * FROM users WHERE id=$1", id);
-    res.status(200).json({
-      status: "ok",
-      user,
-      message: "Retrieved user",
-    });
-  } catch (error) {
-    next(error);
-  }
-};
+// const getUserById = async (req, res, next) => {
+//   const { id } = req.params;
+//   try {
+//     let user = await db.one("SELECT * FROM users WHERE id=$1", id);
+//     res.status(200).json({
+//       status: "ok",
+//       user,
+//       message: "Retrieved user",
+//     });
+//   } catch (error) {
+//     next(error);
+//   }
+// };
 
 const createNewUser = async (req, res, next) => {
   try {
@@ -54,17 +54,6 @@ const createNewUser = async (req, res, next) => {
       message: "Created new user",
     });
   } catch (error) {
-    // if (error.constraint === "users_email_key") {
-    //   res.status(400).json({
-    //     status: 400,
-    //     error: "User with that email exists",
-    //   });
-    // } else if (error.constraint === "users_username_key") {
-    //   res.status(400).json({
-    //     status: 400,
-    //     error: "User with that username exists",
-    //   });
-    // }
     console.log(error);
     next(error);
   }
@@ -162,7 +151,7 @@ const createNewUser = async (req, res, next) => {
 
 module.exports = {
   // isUserExisting,
-  getUserById,
+  // getUserById,
   createNewUser,
   //   deleteUser,
   //   updateUser,
