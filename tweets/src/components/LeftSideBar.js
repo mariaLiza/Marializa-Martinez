@@ -8,7 +8,6 @@ import bookmark from "../images/sidebarIcons/bookmark-5-xl.png";
 import email from "../images/sidebarIcons/email-12-xl.png";
 import hashtag from "../images/sidebarIcons/hashtag white.png";
 import lists from "../images/sidebarIcons/lists.png";
-// import search from "../images/sidebarIcons/search-12-xl.png";
 import morecircle from "../images/sidebarIcons/morecircle white.png";
 
 const LeftSideBar = () => {

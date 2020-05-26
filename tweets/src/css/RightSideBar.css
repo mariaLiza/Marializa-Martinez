@@ -11,6 +11,7 @@ light blue classic #1da1f2
   border: 0.5px solid #8899a69a;
   height: max-content;
   width: 18em;
+  margin-top: 10px;
   margin-right: 15%;
   margin-bottom: 10px;
   padding: 10px;
@@ -29,7 +30,7 @@ light blue classic #1da1f2
   width: 15em;
   height: auto;
   padding: 10px;
- 
+
   position: relative;
 }
 
@@ -112,6 +113,6 @@ p {
 }
 
 #empty {
-    height: 1em;
-    width: auto;
+  height: 1em;
+  width: auto;
 }

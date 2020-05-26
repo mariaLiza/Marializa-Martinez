@@ -7,7 +7,7 @@ import "../css/Home.css";
 const Home = () => {
   const { currentUser } = useContext(AuthContext);
 
-  const displayRightSideBar = () => {
+  const displaySideBar = () => {
     if (!currentUser) {
       return (
         <>
@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <>
-      {displayRightSideBar()}
+      {displaySideBar()}
       <div>Home Page</div>
     </>
   );

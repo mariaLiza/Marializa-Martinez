@@ -11,9 +11,9 @@ nav {
 }
 
 #home {
-  width: 3em;
+  width: 3.2em;
   height: auto;
-  padding-bottom: 20px;
+  padding-bottom: 1em;
   margin-top: 0;
 }
 
@@ -107,4 +107,32 @@ nav {
   text-decoration: none;
   color: whitesmoke;
   font-size: large;
+}
+
+#searchForm {
+  display: flex;
+  flex-direction: row;
+}
+#searchIcon {
+  padding-top: 12px;
+  padding-right: 10px;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+#searchInput {
+  width: 25em;
+  height: 2em;
+  margin-top: 7px;
+  border-radius: 25px;
+  text-align: center;
+  background-color: #253341;
+  border: none;
+  font-size: 1em;
+}
+
+input::placeholder {
+  text-align: center;
+  font-size: 11pt;
+  color: #8899a6;
 }

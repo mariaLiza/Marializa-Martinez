@@ -5,7 +5,7 @@ import { logout } from "../util/firebaseFunctions";
 import { AuthContext } from "../providers/AuthContext";
 import whiteBird from "../images/utilityIcons/whiteBird.png";
 import profilePic from "../images/sidebarIcons/profile white.png";
-
+import search from "../images/sidebarIcons/search-12-xl.png";
 // import { useInput } from "../util/customHooks";
 
 const NavBar = (params) => {
@@ -16,6 +16,14 @@ const NavBar = (params) => {
     if (currentUser) {
       return (
         <>
+          <form id="searchForm">
+            <img id="searchIcon" src={search} alt="search" />
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search Twitter by hashtag"
+            />
+          </form>
           <a id="logout" onClick={logout}>
             Log Out
           </a>
@@ -50,9 +58,6 @@ const NavBar = (params) => {
         <img id="home" src={whiteBird} alt="home" />
       </NavLink>
       {displayButtons()}
-      {/* <NavLink exact to="/users/:id">
-        User Profile
-      </NavLink> */}
     </nav>
   );
 };
