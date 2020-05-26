@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/UserProfile.css";
 import { apiURL } from "../util/apiURL";
 import axios from "axios";
+import LeftSideBar from "./LeftSideBar";
 
 const UserProfile = () => {
   const API = apiURL();
@@ -20,13 +21,14 @@ const UserProfile = () => {
 
   return (
     <>
+      <LeftSideBar />
       <h1>UserProfile</h1>
       <h2>If Logged In</h2>
-      <div>
+      {/* <div>
         {user.map((user) => {
           return <li key={user.id}>{user.full_name}</li>;
         })}
-      </div>
+      </div> */}
     </>
   );
 };

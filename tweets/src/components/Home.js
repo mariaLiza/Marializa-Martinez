@@ -25,8 +25,8 @@ const Home = () => {
 
   return (
     <>
-      <div>Home Page</div>
       {displayRightSideBar()}
+      <div>Home Page</div>
     </>
   );
 };

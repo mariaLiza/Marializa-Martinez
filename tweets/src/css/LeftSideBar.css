@@ -1,0 +1,116 @@
+/* 
+//colors:
+light grey text #8899a6 
+dark input color #192734
+dark div color #39434c
+light blue classic #1da1f2
+*/
+
+/*
+//icons in order:
+#birdHouse
+#hash
+#bell
+#mail
+#bookMark
+#listIcon
+#userProfile
+#moreCircle
+*/
+
+#leftSideDiv {
+  margin-left: 15%;
+  display: flex;
+  flex-direction: column;
+  border-right: 0.5px solid #8899a69a;
+  text-align: left;
+  height: 100%;
+  position: fixed;
+  padding: 10px;
+}
+
+#leftNav {
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+#leftNav > li {
+  text-decoration: none;
+}
+
+#birdHouse {
+  height: 2.5em;
+  width: auto;
+}
+
+#hash {
+  height: 2em;
+  width: auto;
+  padding: 5px;
+}
+
+#bell {
+  height: 2em;
+  width: auto;
+  padding: 5px;
+}
+
+#mail {
+  height: 2em;
+  width: auto;
+  padding: 5px;
+}
+
+#bookMark {
+  height: 2em;
+  width: auto;
+  padding: 5px;
+}
+
+#listIcon {
+  height: 2em;
+  width: auto;
+  padding: 5px;
+}
+
+#userProfile {
+  height: 2.5em;
+  width: auto;
+  padding: 5px;
+}
+
+#moreCircle {
+  height: 2.5em;
+  width: auto;
+  padding: 5px;
+}
+
+#leftSideText > li {
+  color: whitesmoke;
+  font-size: large;
+  padding-bottom: 1.78em;
+  padding-right: 20px;
+}
+
+#leftHomeText {
+  padding-top: 2px;
+  color: whitesmoke;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#leftProfileText {
+  padding-bottom: 5px;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.link:active {
+  position: relative;
+  top: 1px;
+}
+
+.link:hover {
+  background-color: #39434c;
+}
