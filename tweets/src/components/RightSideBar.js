@@ -3,7 +3,7 @@ import { NavLink, useHistory } from "react-router-dom";
 import "../css/RightSideBar.css";
 import pic from "../images/sidebarIcons/twitter_login_sidebar_illustration.png";
 import { login } from "../util/firebaseFunctions";
-import Footer from "./Footer"
+import Footer from "./Footer";
 
 const RightSideBar = () => {
   const [email, setEmail] = useState("");
@@ -36,6 +36,7 @@ const RightSideBar = () => {
           <input
             id="pwInputSide"
             class="sbInput"
+            type="password"
             value={password}
             onChange={(e) => setPassword(e.currentTarget.value)}
           />
@@ -48,10 +49,10 @@ const RightSideBar = () => {
           </NavLink>
         </form>
       </div>
-      <br/>
-      <br/>
-      <br/>
-      <Footer/>
+      <br />
+      <br />
+      <br />
+      <Footer />
     </>
   );
 };
