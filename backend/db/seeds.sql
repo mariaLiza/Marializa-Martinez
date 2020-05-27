@@ -4,7 +4,7 @@
 -- \c tweets_database;
 
 INSERT INTO users
-  (fullname, email, username, bio)
+  (fullname, email, username, bio, profile_pic)
 VALUES
   ('Marializa Martinez', 'mariamartinez@pursuit.org', 'marializa0414', 'Animator turned chocolatier');
  

@@ -21,6 +21,7 @@ CREATE TABLE users
   fullname TEXT,
   email TEXT NOT NULL UNIQUE,
   username TEXT UNIQUE,
+  profile_pic VARCHAR,
   bio TEXT
 );
 

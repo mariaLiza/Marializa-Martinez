@@ -3,7 +3,7 @@ const {
   getAllTags,
   getTagByName,
   createTag,
-} = require("../../queries/tags/tagsQueries");
+} = require("../../queries/tags/tagQueries");
 
 const { isPostExisting } = require("../../queries/posts/postQueries");
 

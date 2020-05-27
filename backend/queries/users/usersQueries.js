@@ -23,19 +23,19 @@ const db = require("../../db/index");
 //   }
 // };
 
-// const getUserById = async (req, res, next) => {
-//   const { id } = req.params;
-//   try {
-//     let user = await db.one("SELECT * FROM users WHERE id=$1", id);
-//     res.status(200).json({
-//       status: "ok",
-//       user,
-//       message: "Retrieved user",
-//     });
-//   } catch (error) {
-//     next(error);
-//   }
-// };
+const getUserById = async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    let user = await db.one("SELECT * FROM users WHERE id=$1", id);
+    res.status(200).json({
+      status: "ok",
+      user,
+      message: "Retrieved user",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
 
 const createNewUser = async (req, res, next) => {
   try {
@@ -98,42 +98,40 @@ const createNewUser = async (req, res, next) => {
 //   }
 // };
 
-// const updateUser = async (req, res, next) => {
-//   try {
-//     const { id } = req.params;
-//     const { username, profile_pic } = req.body;
-//     let user;
+const updateUser = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { username, profile_pic } = req.body;
+    let user;
 
-// if (username) {
-//   user = await db.one(
-//     `UPDATE users SET username=$1 WHERE id=$2 RETURNING *`,
-//     [username, id]
-//   );
-// }
-
-// if (profile_pic) {
-//   user = await db.one(
-//     `UPDATE users SET profile_pic=$1 WHERE id=$2 RETURNING *`,
-//     [profile_pic, id]
-//   );
-// }
-
-//     if (user) {
-//       res.status(200).json({
-//         status: "ok",
-//         user,
-//         message: "Updated user"
-//       });
-//     } else {
-//       res.status(400).json({
-//         status: 400,
-//         error: "No updates made"
-//       });
-//     }
-//   } catch (error) {
-//     next(error);
-//   }
-// };
+    if (username) {
+      user = await db.one(
+        `UPDATE users SET username=$1 WHERE id=$2 RETURNING *`,
+        [username, id]
+      );
+    }
+    if (profile_pic) {
+      user = await db.one(
+        `UPDATE users SET profile_pic=$1 WHERE id=$2 RETURNING *`,
+        [profile_pic, id]
+      );
+    }
+    if (user) {
+      res.status(200).json({
+        status: "ok",
+        user,
+        message: "Updated user",
+      });
+    } else {
+      res.status(400).json({
+        status: 400,
+        error: "No updates made",
+      });
+    }
+  } catch (error) {
+    next(error);
+  }
+};
 
 // const deleteUser = async (req, res, next) => {
 //   const { id } = req.params;
@@ -151,10 +149,10 @@ const createNewUser = async (req, res, next) => {
 
 module.exports = {
   // isUserExisting,
-  // getUserById,
+  getUserById,
   createNewUser,
   //   deleteUser,
-  //   updateUser,
+    updateUser,
   // logIn,
   // getAllUsers,
 };

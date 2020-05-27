@@ -1,28 +1,31 @@
 // const express = require("express");
 // const users = express.Router({ mergeParams: true });
 const users = require("express").Router();
+const userPostsRouter = require("../users/userPosts/userPostsRoutes");
+const { checkFirebaseToken } = require("../../middleware/auth");
 
 const {
-  // getUserById,
+  getUserById,
   createNewUser,
   // isUserExisting,
   // logIn,
-  //   updateUser,
+  updateUser,
   //   deleteUser,
   //   getAllUsers,
 } = require("../../queries/users/usersQueries");
 
 //nested
-// users.use("/:id/posts", userPostsRoutes);
+users.use("/:id/posts", userPostsRouter);
 // isUserExisting
-// users.get("/:id", getUserById);
+users.get("/:id", checkFirebaseToken, getUserById);
 users.post("/", createNewUser);
 
 // users.get("/", getAllUsers);
 
 // users.post("/login", logIn);
+// isUserExisting,
 
-// users.patch("/:id", isUserExisting, updateUser);
+users.patch("/:id", updateUser);
 
 // users.delete("/:id", isUserExisting, deleteUser);
 
