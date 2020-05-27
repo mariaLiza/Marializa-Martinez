@@ -7,6 +7,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import AuthProvider from "./providers/AuthContext";
 import "./App.css";
+import { AuthRoute, ProtectedRoute } from "./util/routeUtil";
 
 function App() {
   return (
@@ -17,15 +18,15 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/signup">
+          <AuthRoute exact path="/signup">
             <Signup />
-          </Route>
-          <Route exact path="/login">
+          </AuthRoute>
+          <AuthRoute exact path="/login">
             <Login />
-          </Route>
-          <Route exact path="/profile">
+          </AuthRoute>
+          <ProtectedRoute exact path="/profile">
             <UserProfile />
-          </Route>
+          </ProtectedRoute>
 
           {/* <Route path="*">
           <Error />

@@ -19,14 +19,14 @@ light blue classic #1da1f2
 */
 
 #leftSideDiv {
-  margin-left: 10%;
+  margin-left: 5%;
   display: flex;
   flex-direction: column;
   border-right: 0.5px solid #8899a69a;
   text-align: left;
   height: 100%;
   position: fixed;
-  padding: 10px;
+  padding: 25px;
 }
 
 #leftNav {
@@ -93,11 +93,20 @@ light blue classic #1da1f2
   padding-right: 20px;
 }
 
+#leftSideText > li:hover {
+  color: #1da1f2;
+  text-decoration: none;
+}
+
 #leftHomeText {
   padding-top: 2px;
   color: whitesmoke;
   text-decoration: none;
   cursor: pointer;
+}
+
+#leftHomeText:hover {
+  color: #1da1f2;
 }
 
 #leftProfileText {
@@ -106,11 +115,50 @@ light blue classic #1da1f2
   text-decoration: none;
 }
 
+#leftProfileText:hover {
+  color: #1da1f2;
+}
+
 .link:active {
   position: relative;
   top: 1px;
+  color: #1da1f2;
 }
 
 .link:hover {
   background-color: #39434c;
+  text-decoration: none;
+}
+
+#leftSideTweetBtn {
+  display: flex;
+  margin-top: 190%;
+  margin-left: 0%;
+  background-color: #1da1f2;
+  color: whitesmoke;
+  width: 225px;
+  height: auto;
+  padding: 20px;
+  text-align: center;
+  font-size: 12pt;
+  font-weight: bolder;
+  justify-content: center;
+  border-radius: 30px;
+  border: none;
+}
+
+#leftSideTweetBtn:hover {
+  background-color: #1779b6;
+  cursor: pointer;
+}
+
+#leftSideTweetBtn:active {
+  cursor: pointer;
+  background-color: #1779b6;
+  position: relative;
+  top: 1px;
+}
+
+#leftSideTweetBtn:focus {
+  outline: none;
 }
