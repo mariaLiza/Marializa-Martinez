@@ -1,0 +1,21 @@
+{
+  "name": "Marializa-Martinez",
+  "version": "1.0.0",
+  "description": "CTA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd backend && npm install && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariaLiza/Marializa-Martinez.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariaLiza/Marializa-Martinez/issues"
+  },
+  "homepage": "https://github.com/mariaLiza/Marializa-Martinez#readme"
+}

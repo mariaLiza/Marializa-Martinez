@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS tweets_database;
-CREATE DATABASE tweets_database;
+-- DROP DATABASE IF EXISTS tweets_database;
+-- CREATE DATABASE tweets_database;
 
-\c tweets_database;
+-- \c tweets_database;
 
 /* 
 
