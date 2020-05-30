@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../providers/AuthContext";
 import RightSideBar from "./RightSideBar";
 import LeftSideBar from "./LeftSideBar";
+import HomeFeed from "./HomeFeed";
 import "../css/Home.css";
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
       return (
         <>
           <LeftSideBar />
+          <HomeFeed />
         </>
       );
     }

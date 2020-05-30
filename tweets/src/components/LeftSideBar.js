@@ -66,7 +66,9 @@ const LeftSideBar = () => {
         </nav>
         <div>
           {" "}
-          <button id="leftSideTweetBtn">Tweet</button>
+          <NavLink exact to="/maketweet">
+            <p id="leftSideTweetBtn">Tweet</p>
+          </NavLink>
         </div>
       </div>
     </>

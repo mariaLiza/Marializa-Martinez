@@ -145,11 +145,14 @@ light blue classic #1da1f2
   justify-content: center;
   border-radius: 30px;
   border: none;
+  text-decoration: none;
 }
 
 #leftSideTweetBtn:hover {
   background-color: #1779b6;
   cursor: pointer;
+  text-decoration: none;
+  /* color: inherit; */
 }
 
 #leftSideTweetBtn:active {
@@ -157,8 +160,22 @@ light blue classic #1da1f2
   background-color: #1779b6;
   position: relative;
   top: 1px;
+  text-decoration: none;
+  /* color: inherit; */
 }
 
 #leftSideTweetBtn:focus {
   outline: none;
+  text-decoration: none;
+  /* color: inherit; */
+}
+
+link:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+link {
+  text-decoration: none;
+  color: inherit;
 }

@@ -6,8 +6,10 @@ import UserProfile from "./components/UserProfile";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import AuthProvider from "./providers/AuthContext";
+import MakeTweet from "./components/MakeTweet";
 import "./App.css";
 import { AuthRoute, ProtectedRoute } from "./util/routeUtil";
+
 
 function App() {
   return (
@@ -26,6 +28,9 @@ function App() {
           </AuthRoute>
           <ProtectedRoute exact path="/profile">
             <UserProfile />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/maketweet">
+            <MakeTweet />
           </ProtectedRoute>
 
           {/* <Route path="*">
