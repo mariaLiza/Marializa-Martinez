@@ -8,21 +8,25 @@ import { AuthContext } from "../providers/AuthContext";
 const UserProfile = () => {
   const API = apiURL();
   const [user, setUser] = useState([]);
-  const { token } = useContext(AuthContext);
+  const { token, currentUser } = useContext(AuthContext);
 
-  // useEffect(() => {
-  //   const fetchUserById = async () => {
-  //     let res = await axios({
-  //       method: "get",
-  //       url: `${API}/api/users/${token}`,
-  //       headers: {
-  //         AuthToken: token,
-  //       },
-  //     });
-  //     setUser(res.data.users);
-  //   };
-  //   fetchUserById();
-  // }, []);
+  useEffect(() => {
+    const fetchUserById = async () => {
+      // console.log(token);
+      // console.log(currentUser);
+      let res = await axios({
+        method: "get",
+        url: `${API}/api/users/${currentUser.uid}`,
+        headers: {
+          AuthToken: token,
+        },
+      });
+      setUser(res.data.user);
+      console.log(user, "user");
+      debugger;
+    };
+    fetchUserById();
+  }, []);
 
   return (
     <>

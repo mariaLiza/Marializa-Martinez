@@ -64,12 +64,10 @@ const LeftSideBar = () => {
             <li>More</li>
           </ul>
         </nav>
-      <div>
-        {" "}
-        <button id="leftSideTweetBtn" type="" submit>
-          Tweet
-        </button>
-      </div>
+        <div>
+          {" "}
+          <button id="leftSideTweetBtn">Tweet</button>
+        </div>
       </div>
     </>
   );

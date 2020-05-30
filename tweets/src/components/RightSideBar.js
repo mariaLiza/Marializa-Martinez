@@ -23,19 +23,19 @@ const RightSideBar = () => {
   return (
     <>
       <div id="sbDiv">
-        <form id="sbForm" class="sideBarForm" onSubmit={handleSubmit}>
+        <form id="sbForm" className="sideBarForm" onSubmit={handleSubmit}>
           <img id="sidePic" src={pic} alt="see what's happening" />
           <h4 id="sbH">See what’s happening in the world right now</h4>
-          <label class="sbLabels">Email</label>
+          <label className="sbLabels">Email</label>
           <input
-            class="sbInput"
+            className="sbInput"
             value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}
           />
-          <label class="sbLabels">Password</label>
+          <label className="sbLabels">Password</label>
           <input
             id="pwInputSide"
-            class="sbInput"
+            className="sbInput"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.currentTarget.value)}
