@@ -8,22 +8,22 @@ import emoticon from "../images/makeTweetIcons/emoticon-30-xl.png";
 import gifInsert from "../images/makeTweetIcons/gif_insert.png";
 import imgInsert from "../images/makeTweetIcons/img_insert.png";
 import axios from "axios";
+import { apiURL } from "../util/apiURL";
 
 const MakeTweets = () => {
   const { currentUser } = useContext(AuthContext);
+  const API = apiURL();
 
-
-const createTweet = async () => {
+  const createTweet = async () => {
     try {
-let res = await axios({
-    method: "post",
-    url: `${API}/api/post`
-})
+      let res = await axios({
+        method: "post",
+        url: `${API}/api/post`,
+      });
     } catch (err) {
-        console.log(err)
+      console.log(err);
     }
-}
-
+  };
 
   return (
     <>
@@ -38,10 +38,16 @@ let res = await axios({
               src={profilePic}
               alt="profile image"
             />
-            <label id="makeTweetLabel">What's happening?</label>
+            {/* <label id="makeTweetLabel">What's happening?</label> */}
           </div>
 
-          <input id="tweetInput" type="text" />
+          <textarea
+            id="tweetInput"
+            rows="7"
+            cols="20"
+            placeholder="What's happening?"
+            type="text"
+          ></textarea>
         </form>
         <div className="makeTweetIcons">
           <ul className="iconListMT">

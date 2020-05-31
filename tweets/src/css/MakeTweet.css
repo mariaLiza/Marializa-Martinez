@@ -37,8 +37,8 @@ light blue classic #1da1f2
   font-weight: thin;
   font-stretch: wider;
   color: whitesmoke;
-  border-bottom: 1px solid #8899a6;
-  padding: 10px 5px 10px 25px;
+  border-bottom: 1px solid #8899a69a;
+  padding: 10px 5px 10px 38px;
 }
 
 #xOut:hover {
@@ -69,20 +69,35 @@ light blue classic #1da1f2
 
 #tweetInput {
   display: flex;
+  justify-content: start;
+  /* flex-wrap: wrap; */
+  /* display: inline-block;
+  vertical-align: top; */
+  text-align: left;
   font-size: medium;
   margin-left: 5em;
-  margin-top: -7em;
+  margin-top: -3.5em;
+  /* background-color: #192734; */
   background-color: transparent;
   border: none;
-  width: 100%;
+  width: auto;
   height: 100%;
-  text-align: left;
   color: whitesmoke;
+  text-overflow: contain;
+  padding: 5px;
 }
 
 #tweetInput:active {
-  background-color: transparent;
+  background-color: #192734;
   border: none;
+}
+
+#tweetInput:focus {
+  outline: none;
+}
+
+#tweetInput::placeholder {
+  font-size: large;
 }
 
 .makeTweetIcons {
@@ -91,7 +106,7 @@ light blue classic #1da1f2
   justify-content: space-between;
   height: 50px;
   width: auto;
-  border-top: 1px solid #8899a6;
+  /* border-top: 1px solid #8899a6; */
   padding: 10px 5px 10px 25px;
   cursor: pointer;
 }

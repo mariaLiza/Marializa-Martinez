@@ -12,8 +12,6 @@ const UserProfile = () => {
 
   useEffect(() => {
     const fetchUserById = async () => {
-      // console.log(token);
-      // console.log(currentUser);
       let res = await axios({
         method: "get",
         url: `${API}/api/users/${currentUser.uid}`,
@@ -22,8 +20,8 @@ const UserProfile = () => {
         },
       });
       setUser(res.data.user);
-      console.log(user, "user");
-      debugger;
+      // console.log(user, "user");
+      // debugger;
     };
     fetchUserById();
   }, []);

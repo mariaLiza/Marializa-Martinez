@@ -16,7 +16,7 @@ const HomeFeed = () => {
           method: "get",
           url: `${API}/api/posts`,
         });
-        debugger;
+        // debugger;
         setFeed(res.data.allPosts);
       } catch (err) {
         console.log(err);
