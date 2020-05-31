@@ -30,16 +30,16 @@ const Login = () => {
           <img id="bird" src={whiteBird} alt="home" />
         </NavLink>
         <h1 id="title">Log in to Twitter</h1>
-        <form class="lForm" id="lFormInp" onSubmit={handleSubmit}>
+        <form className="lForm" id="lFormInp" onSubmit={handleSubmit}>
           <label id="email">Email</label>
           <input
-            class="input"
+            className="input"
             value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}
           />
           <label id="password">Password</label>
           <input
-            class="input"
+            className="input"
             type="password"
             value={password}
             autoComplete="on"
@@ -48,7 +48,9 @@ const Login = () => {
           <button id="logInbtn" type="submit">
             Log In
           </button>
-          <NavLink id="suft" exact to="/signup">Sign up for Twitter</NavLink>
+          <NavLink id="suft" exact to="/signup">
+            Sign up for Twitter
+          </NavLink>
         </form>
       </div>
     </>

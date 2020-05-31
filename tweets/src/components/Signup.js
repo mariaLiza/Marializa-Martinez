@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { NavLink, useHistory } from "react-router-dom";
+import { useInput } from "../util/customHooks";
 import { apiURL } from "../util/apiURL";
 import { signUp } from "../util/firebaseFunctions";
 import "../css/SignUp.css";
@@ -11,6 +12,10 @@ const Signup = () => {
   const [error, setError] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const bio = useInput("");
+  const fullName = useInput("");
+  // const profilePic = useInput(null);
+  const userName = useInput("");
   const history = useHistory();
   const API = apiURL();
 
@@ -21,8 +26,11 @@ const Signup = () => {
       await axios.post(`${API}/api/users`, {
         id: res.user.uid,
         email,
+        fullname: fullName.value,
+        username: userName.value,
+        bio: bio.value,
       });
-      history.push("/");
+      history.push("/profile");
     } catch (err) {
       setError(err.message);
     }
@@ -36,8 +44,8 @@ const Signup = () => {
         </NavLink>
         <h1 id="create">Create your account</h1>
         {error ? <div>{error}</div> : null}
-        <form class="form" id="formInp" onSubmit={handleSubmit}>
-          <label class="suLabel" id="emLabel">
+        <form className="form" id="formInp" onSubmit={handleSubmit}>
+          <label className="suLabel" id="emLabel">
             Email
           </label>
           <input
@@ -45,7 +53,7 @@ const Signup = () => {
             value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}
           />
-          <label class="suLabel" id="pwLabel">
+          <label className="suLabel" id="pwLabel">
             Password
           </label>
           <input
@@ -54,7 +62,10 @@ const Signup = () => {
             value={password}
             autoComplete="on"
             onChange={(e) => setPassword(e.currentTarget.value)}
-          />
+          />{" "}
+          <input type="text" {...userName} placeholder="Username" />
+          <input type="text" {...fullName} placeholder="Full Name" />
+          <textarea rows="4" cols="40" placeholder="Bio" {...bio}></textarea>
           <button id="nextBtn" type="submit">
             Next
           </button>
