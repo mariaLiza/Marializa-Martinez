@@ -1,0 +1,109 @@
+/* 
+//colors:
+main-background-color: #15202B;
+light grey text #8899a6 
+dark input color #192734
+dark div color #39434c
+light blue classic #1da1f2
+*/
+
+/* .userInfoDiv */
+
+#userH1 {
+  display: flex;
+  font-size: larger;
+  padding: 10px 5px 5px 5px;
+}
+
+#divUserInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: auto;
+  margin-left: 24%;
+  border-right: 0.5px solid #8899a6;
+  width: 47%;
+  height: auto;
+}
+
+#userInfoContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #8899a6;
+  position: sticky;
+}
+
+#userProfilePic {
+  display: flex;
+  justify-self: start;
+  justify-content: flex-start;
+  border: 5px solid #15202b;
+  background-color: #192734;
+  border-radius: 100%;
+  width: 8em;
+  margin-left: 1em;
+  margin-top: -4em;
+}
+
+#backgroundLogo {
+  margin-top: 1em;
+  display: flex;
+  width: auto;
+  height: 15em;
+  border-top: 5px solid #15202b;
+  border-bottom: 5px solid #15202b;
+}
+
+#userNames {
+  margin-left: 2em;
+  padding: 5px 5px 10px 5px;
+}
+
+#userNameH2 {
+  font-size: large;
+}
+
+#bioP {
+  margin-left: 2em;
+  padding: 5px 5px 20px 5px;
+}
+
+#updateDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#updateProfileBtn {
+  border: 1px solid #1da1f2;
+  border-radius: 25px;
+  text-justify: distribute;
+  cursor: pointer;
+  background-color: #15202b;
+  color: #1da1f2;
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bolder;
+  width: auto;
+  height: 3em;
+  text-decoration: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 1em;
+  margin-right: 1em;
+}
+
+#updateProfileBtn:focus {
+  outline: none;
+}
+#updateProfileBtn:active {
+  background-color: #1779b6;
+}
+#updateProfileBtn:hover {
+  background-color: #1779b6;
+}

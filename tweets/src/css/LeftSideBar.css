@@ -19,24 +19,38 @@ light blue classic #1da1f2
 */
 
 #leftSideDiv {
-  margin-left: 5%;
+  /* margin-left: 5%; */
+  width: 24%;
   display: flex;
   flex-direction: column;
+  justify-content: stretch;
   border-right: 0.5px solid #8899a69a;
   text-align: left;
   height: 100%;
   position: fixed;
-  padding: 25px;
+  /* overflow-anchor: ; */
+  
+  /* padding: 25px; */
 }
 
 #leftNav {
   border: none;
   text-align: left;
   cursor: pointer;
+  position: static;
+  height: auto;
 }
 
 #leftNav > li {
   text-decoration: none;
+}
+
+#leftNav > li:hover {
+  color: #1da1f2;
+}
+
+#leftSideIcons {
+  margin-left: 25%;
 }
 
 #birdHouse {
@@ -90,7 +104,8 @@ light blue classic #1da1f2
   color: whitesmoke;
   font-size: large;
   padding-bottom: 1.78em;
-  padding-right: 20px;
+  padding-right: 25px;
+  cursor: pointer;
 }
 
 #leftSideText > li:hover {
@@ -117,6 +132,7 @@ light blue classic #1da1f2
 
 #leftProfileText:hover {
   color: #1da1f2;
+  cursor: pointer;
 }
 
 .link:active {
@@ -132,11 +148,12 @@ light blue classic #1da1f2
 
 #leftSideTweetBtn {
   display: flex;
-  margin-top: 190%;
-  margin-left: 0%;
+  margin-top: auto;
+  margin-left: 30%;
+  margin-right: 5%;
   background-color: #1da1f2;
   color: whitesmoke;
-  width: 225px;
+  width: 50%;
   height: auto;
   padding: 20px;
   text-align: center;

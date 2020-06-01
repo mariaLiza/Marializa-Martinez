@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import { NavLink, useHistory } from "react-router-dom";
 import { useInput } from "../util/customHooks";
@@ -7,8 +7,11 @@ import { signUp } from "../util/firebaseFunctions";
 import "../css/SignUp.css";
 import whiteBird from "../images/utilityIcons/whiteBird.png";
 import GetDatePicker from "./DatePicker";
+import { AuthContext } from "../providers/AuthContext";
 
 const Signup = () => {
+  const { currentUser } = useContext(AuthContext);
+
   const [error, setError] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,6 +21,7 @@ const Signup = () => {
   const userName = useInput("");
   const history = useHistory();
   const API = apiURL();
+  const [user, setUser] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,7 +34,14 @@ const Signup = () => {
         username: userName.value,
         bio: bio.value,
       });
+      // if (res.data.user.id === currentUser.uid) {
+      //   res.data.user = currentUser;
+      // }
+      setUser(res.data.user[0]);
+      // debugger;
       history.push("/profile");
+      // console.log(user, "user")
+      // console.log(res.data.user, "resuser")
     } catch (err) {
       setError(err.message);
     }
