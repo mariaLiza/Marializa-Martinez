@@ -40,14 +40,6 @@ const UserProfileInfo = () => {
     getUser();
   }, []);
 
-  // profilePic = user.profile_Pic
-  //   ? profilePic
-  //  : "https://ya-webdesign.com/transparent250_/blank-profile-picture-png-2.png";
-//  {
-//     /* {currentUser.email}
-// {user} */
-//   }
-
   return (
     <>
       <div className="userInfoDiv" id="divUserInfo">

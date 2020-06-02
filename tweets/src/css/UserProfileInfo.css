@@ -20,9 +20,9 @@ light blue classic #1da1f2
   flex-direction: column;
   justify-content: flex-start;
   margin: auto;
-  margin-left: 24%;
+  margin-left: 26%;
   border-right: 0.5px solid #8899a6;
-  width: 47%;
+  width: 45%;
   height: auto;
 }
 
@@ -33,7 +33,7 @@ light blue classic #1da1f2
   width: 100%;
   height: auto;
   border-bottom: 1px solid #8899a6;
-  position: sticky;
+  position: relative;
 }
 
 #userProfilePic {

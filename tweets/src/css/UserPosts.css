@@ -9,13 +9,12 @@ light blue classic #1da1f2
 
 #userTweetsH1 {
     display: flex;
-    margin-left: 38%;
-    /* margin-top: -7%; */
+    margin-left: 40%;
     margin-top: 0;
     color: #1da1f2;
     font-size: large;
     font-weight: bold;
-    padding: 10px;
+    padding: 20px;
   }
   
   #userPostsDiv {
@@ -26,3 +25,66 @@ light blue classic #1da1f2
     width: 71%;
   }
   
+  /* .userPostsListDiv */
+  /* id="dateStampP" */
+  /* id="userNameP" */
+  /* id="postBodyP" */
+  /* id="picP" */
+
+  .userPostsListDiv {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 36.9%;
+    /* margin-left: 38%; */
+    border-bottom: 1px outset #8899a6;
+    /* padding: 5px 5px 5px 10px; */
+    width:61%;
+    height: max-content;
+    padding: 11px;
+  }
+
+  .userPostsListDiv:hover {
+    background-color: #192734;
+  }
+
+  #postProfilePic {
+    display: flex;
+    flex-direction: initial;
+    border-radius: 100%;
+    border: 1px solid #8899a6;
+    width: 3em;
+    height: 3em;
+    /* margin-top: 20px;
+    margin-left: 20px; */
+  }
+
+  .rowContainer {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+  }
+
+  .rowContainer > p {
+    padding-left: 25px;
+  }
+
+  #userNameP {
+    font-size: large;
+    color: whitesmoke;
+    padding-top: 15px;
+  }
+
+  #dateStampP {
+    padding-top: 20px;
+    font-size: 10pt;
+  }
+
+  #postBodyP {
+    display: flex;
+    font-size: large;
+    color: whitesmoke;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 17%;
+  }
