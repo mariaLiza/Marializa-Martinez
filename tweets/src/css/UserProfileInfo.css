@@ -20,15 +20,9 @@ light blue classic #1da1f2
   flex-direction: column;
   justify-content: flex-start;
   margin: auto;
-<<<<<<< HEAD
-  margin-left: 27%;
-  border-right: 0.5px solid #8899a6;
-  width: 44%;
-=======
   margin-left: 24%;
   border-right: 0.5px solid #8899a6;
   width: 47%;
->>>>>>> cea6169b989cd25718863991016e13d64dd13a8e
   height: auto;
 }
 
@@ -51,28 +45,17 @@ light blue classic #1da1f2
   border-radius: 100%;
   width: 8em;
   margin-left: 1em;
-<<<<<<< HEAD
   margin-top: -4.5em;
-=======
-  margin-top: -4em;
->>>>>>> cea6169b989cd25718863991016e13d64dd13a8e
 }
 
 #backgroundLogo {
   margin-top: 1em;
   display: flex;
-<<<<<<< HEAD
   width: 100%;
   height: auto;
   background-color: #192734;
   border-top: 1px solid #8899a6ca;
   border-bottom: 3px solid #15202b;
-=======
-  width: auto;
-  height: 15em;
-  border-top: 5px solid #15202b;
-  border-bottom: 5px solid #15202b;
->>>>>>> cea6169b989cd25718863991016e13d64dd13a8e
 }
 
 #userNames {
