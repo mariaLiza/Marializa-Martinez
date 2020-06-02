@@ -8,6 +8,7 @@ nav {
   width: 101%;
   position: sticky;
   top: 0;
+  opacity: 1;
 }
 
 #home {

@@ -98,6 +98,7 @@ const MakeTweets = () => {
             cols="20"
             placeholder="What's happening?"
             type="text"
+            {...body}
           ></textarea>
           <div className="makeTweetIcons">
             <ul className="iconListMT">

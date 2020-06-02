@@ -8,6 +8,7 @@ light blue classic #1da1f2
 */
 
 #userTweetsH1 {
+<<<<<<< HEAD
     display: flex;
     margin-left: 38%;
     /* margin-top: -7%; */
@@ -26,3 +27,22 @@ light blue classic #1da1f2
     width: 71%;
   }
   
+=======
+  display: flex;
+  margin-left: 38%;
+  /* margin-top: -7%; */
+  margin-top: 0;
+  color: #1da1f2;
+  font-size: large;
+  font-weight: bold;
+  padding: 10px;
+}
+
+#userPostsDiv {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-right: 1px solid #8899a6;
+  width: 71%;
+}
+>>>>>>> cea6169b989cd25718863991016e13d64dd13a8e
