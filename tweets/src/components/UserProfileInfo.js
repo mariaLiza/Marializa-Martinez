@@ -3,7 +3,8 @@ import axios from "axios";
 import "../css/UserProfileInfo.css";
 import { AuthContext } from "../providers/AuthContext";
 import { apiURL } from "../util/apiURL";
-import twitterLogo from "../images/Twitter_logo.png";
+// import twitterLogo from "../images/Twitter_logo.png";
+import banner from "../images/banner.jpg"
 
 const UserProfileInfo = () => {
   const { currentUser, token } = useContext(AuthContext);
@@ -45,7 +46,7 @@ const UserProfileInfo = () => {
       <div className="userInfoDiv" id="divUserInfo">
         <h1 id="userH1">{userName}</h1>
         <div id="userInfoContainer">
-          <img id="backgroundLogo" src={twitterLogo} alt="background" />
+          <img id="backgroundLogo" src={banner} alt="background" />
           <div id="updateDiv">
             {" "}
             <img
