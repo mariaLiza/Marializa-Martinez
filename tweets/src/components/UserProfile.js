@@ -5,10 +5,11 @@ import axios from "axios";
 import LeftSideBar from "./LeftSideBar";
 import UserProfileInfo from "./UserProfileInfo"
 import { AuthContext } from "../providers/AuthContext";
+import UserPosts from "./UserPosts";
 
 const UserProfile = () => {
   const API = apiURL();
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState({});
   const { token, currentUser } = useContext(AuthContext);
 
   useEffect(() => {
@@ -20,10 +21,10 @@ const UserProfile = () => {
           AuthToken: token,
         },
       });
-      debugger;
+      // debugger;
       //user arr in res.data.user is empty but query is returned successful???
       setUser(res.data.user);
-      // console.log(user, "user");
+      // console.log(user, "user"
     };
     fetchUserById();
   }, []);
@@ -31,9 +32,8 @@ const UserProfile = () => {
   return (
     <>
       <LeftSideBar />
-      <h1>UserProfile</h1>
-      <h2>If Logged In</h2>
       <UserProfileInfo />
+      <UserPosts/>
       {/* <div>
         {user.map((user) => {
           return <li key={user.id}>{user.full_name}</li>;
