@@ -3,6 +3,7 @@ import axios from "axios";
 import { apiURL } from "../util/apiURL";
 import { AuthContext } from "../providers/AuthContext";
 import profilePic from "../images/sidebarIcons/profile white.png";
+// import MakeTweet from "../components/MakeTweet";
 import "../css/HomeFeed.css";
 
 const HomeFeed = () => {
@@ -44,7 +45,8 @@ const HomeFeed = () => {
 
   return (
     <>
-      <div >{feedList}</div>
+      {/* <MakeTweet /> */}
+      <div>{feedList}</div>
     </>
   );
 };

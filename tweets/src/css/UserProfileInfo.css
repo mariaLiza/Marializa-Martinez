@@ -25,10 +25,15 @@ light blue classic #1da1f2
   flex-direction: column;
   justify-content: flex-start;
   margin: auto;
-  margin-left: 26%;
-  border-right: 0.5px solid #8899a6;
-  width: 45%;
+  margin-left: 26.1%;
+  border-right: outset .5px #8899a6c0;
+  width: 39.6%;
   height: auto;
+  padding: 1px;
+}
+
+#divUserInfo:hover {
+  background-color: #192734;
 }
 
 #userInfoContainer {

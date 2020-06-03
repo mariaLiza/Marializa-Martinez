@@ -7,6 +7,11 @@ dark div color #39434c
 light blue classic #1da1f2
 */
 
+/* #homeFeedContainerDiv {
+    display: grid;
+    grid-template-rows: 25% 75%;
+} */
+
 .allPostsListDiv {
   display: flex;
   flex-direction: column;
