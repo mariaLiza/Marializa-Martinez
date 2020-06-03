@@ -4,6 +4,7 @@ import RightSideBar from "./RightSideBar";
 import LeftSideBar from "./LeftSideBar";
 import HomeFeed from "./HomeFeed";
 import PublicFeed from "./PublicFeed";
+import Footer from "./Footer";
 import "../css/Home.css";
 
 const Home = () => {
@@ -20,18 +21,18 @@ const Home = () => {
     } else {
       return (
         <>
-          <LeftSideBar />
           <HomeFeed />
+          <LeftSideBar />
         </>
       );
     }
   };
 
   return (
-    <>
+    <div id="mainHomeDiv">
       {displaySideBar()}
-      <div>Home Page</div>
-    </>
+      <Footer />
+    </div>
   );
 };
 

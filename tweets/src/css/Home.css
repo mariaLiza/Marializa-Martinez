@@ -1,0 +1,9 @@
+#mainHomeDiv {
+  /* margin: auto; */
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  justify-content: space-evenly;
+  width: 100%;
+  height: auto;
+  /* border-right: 1px solid #8899a6; */
+}

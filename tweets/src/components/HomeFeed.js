@@ -29,7 +29,7 @@ const HomeFeed = () => {
   let feedList = feed.map((post, i) => {
     return (
       <div key={i} className="allPostsListDiv">
-        <div className="rowContainer">
+        <div className="rowContainerHomeFeed">
           <p id="picP">
             {" "}
             <img id="postProfilePic" src={profilePic} alt="profile image" />
@@ -44,7 +44,7 @@ const HomeFeed = () => {
 
   return (
     <>
-      <div>{feedList}</div>
+      <div >{feedList}</div>
     </>
   );
 };

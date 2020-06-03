@@ -12,9 +12,11 @@ light blue classic #1da1f2
   height: max-content;
   width: 18em;
   margin-top: 10px;
+  margin-left: 67.5%;
   margin-right: 15%;
   margin-bottom: 10px;
   padding: 10px;
+  position: fixed;
 }
 
 .sideBarForm {

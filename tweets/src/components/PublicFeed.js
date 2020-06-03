@@ -27,23 +27,23 @@ const PublicFeed = () => {
 
   let publicFeedList = publicFeed.map((post, i) => {
     return (
-      <div key={i} className="allPostsListDiv">
-        <div className="rowContainer">
+      <div key={i} className="publicPostsListDiv">
+        <div className="rowContainerPublic">
           <p id="picP">
             {" "}
-            <img id="postProfilePic" src={profilePic} alt="profile image" />
+            <img id="postPublicProfPic" src={profilePic} alt="profile image" />
           </p>
-          <p id="userNameP">@{post.username}</p>
-          <p id="dateStampP">{post.created_at}</p>
+          <p id="userNamePublicP">@{post.username}</p>
+          <p id="dateStampPublicP">{post.created_at}</p>
         </div>
-        <p id="allPostBodyP">{post.body}</p>
+        <p id="allPostBodyPublicP">{post.body}</p>
       </div>
     );
   });
 
   return (
     <>
-      <div>{publicFeedList}</div>
+      <div className="publicFeedDiv">{publicFeedList}</div>
     </>
   );
 };

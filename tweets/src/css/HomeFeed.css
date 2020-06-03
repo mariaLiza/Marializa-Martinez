@@ -7,28 +7,40 @@ dark div color #39434c
 light blue classic #1da1f2
 */
 
+.allPostsListDiv {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 105%;
+  justify-content: space-between;
+  border-bottom: 1px outset #8899a6;
+  border-right: 0.5px solid #8899a69a;
+  width: 100%;
+  height: max-content;
+  padding: 25px 70px 25px 70px;
+}
 
+.allPostsListDiv:hover {
+  background-color: #192734;
+}
 
-
-
-  .allPostsListDiv {
+.rowContainerHomeFeed {
     display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-left: 26%;
-    /* margin-left: 38%; */
-    border-bottom: 1px outset #8899a6;
-    /* padding: 5px 5px 5px 10px; */
-    width:61%;
-    height: max-content;
-    padding: 11px;
-  }
+    flex-direction: row;
+    justify-content: flex-start;
+}
 
-  #allPostBodyP {
+.rowContainerHomeFeed > p {
+    padding: 10px;
+    margin: 0;
+}
+
+#allPostBodyP {
   display: flex;
   font-size: large;
   color: whitesmoke;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 12%;
-  }
+  padding-top: 2em;
+  padding-bottom: 2em;
+  padding-left: 2em;
+  margin-left: 20%;
+}
