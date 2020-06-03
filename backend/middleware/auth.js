@@ -1,6 +1,7 @@
 const admin = require("../firebase/firebase");
 
 const checkFirebaseToken = async (req, res, next) => {
+  // console.log("check here")
   try {
     const token = req.headers.authtoken;
     const decodedToken = await admin.auth().verifyIdToken(token);

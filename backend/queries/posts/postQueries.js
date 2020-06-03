@@ -1,5 +1,5 @@
 const db = require("../../db/index");
-const upload = require("./uploads");
+// const upload = require("./uploads");
 
 const isPostExisting = async (req, res, next) => {
   const getId = req.params.id;
@@ -23,53 +23,67 @@ const isPostExisting = async (req, res, next) => {
   }
 };
 
-const getAllPosts = async (req, res, next) => {
+const showAllPosts = async (req, res, next) => {
   try {
-    let posts;
-    let { search } = req.query;
-    console.log(req.query);
-    if (search) {
-      console.log(search);
-      posts = await db.any(
-        `SELECT users.username , full_posts.*
-        FROM  (
-            SELECT posts.*, array_remove(ARRAY_AGG(tags.tag), NULL) AS tags
-            FROM posts
-            LEFT JOIN tags ON tags.post_id = posts.id 
-            WHERE tags.tag=$1
-            GROUP BY posts.id
-            ORDER BY created_at DESC
-            ) AS full_posts
-         JOIN users ON users.id = full_posts.poster_id`,
-        search
-      );
-    } else {
-      posts = await db.any(
-        `SELECT users.username , full_posts.*
-        FROM  (
-            SELECT posts.*, array_remove(ARRAY_AGG(tags.tag), NULL) AS tags
-            FROM posts
-            LEFT JOIN tags ON tags.post_id = posts.id 
-            GROUP BY posts.id
-            ORDER BY created_at DESC
-            ) AS full_posts
-         JOIN users ON users.id = full_posts.poster_id`
-      );
-    }
-
-    if (posts.length) {
-      res.status(200).json({
-        status: "ok",
-        posts,
-        message: "Retrieved all posts",
-      });
-    } else {
-      throw { status: 404, error: "No posts found." };
-    }
-  } catch (error) {
-    next(error);
+    let postsAll = await db.any('SELECT posts.*, users.username FROM posts LEFT JOIN users ON posts.poster_id = users.id ORDER BY created_at DESC');
+    res.status(200).json({
+      status: "ok",
+      postsAll,
+      message: "Retrieved all posts",
+    });
+  } catch (err) {
+    console.log(err);
+    next(err);
   }
 };
+
+// const getAllPosts = async (req, res, next) => {
+//   try {
+//     let posts;
+//     let { search } = req.query;
+//     console.log(req.query);
+//     if (search) {
+//       console.log(search);
+//       posts = await db.any(
+//         `SELECT users.username , full_posts.*
+//         FROM  (
+//             SELECT posts.*, array_remove(ARRAY_AGG(tags.tag), NULL) AS tags
+//             FROM posts
+//             LEFT JOIN tags ON tags.post_id = posts.id
+//             WHERE tags.tag=$1
+//             GROUP BY posts.id
+//             ORDER BY created_at DESC
+//             ) AS full_posts
+//          JOIN users ON users.id = full_posts.poster_id`,
+//         search
+//       );
+// } else {
+//   posts = await db.any(
+//     `SELECT users.username , full_posts.*
+//     FROM  (
+//         SELECT posts.*, array_remove(ARRAY_AGG(tags.tag), NULL) AS tags
+//         FROM posts
+//         LEFT JOIN tags ON tags.post_id = posts.id
+//         GROUP BY posts.id
+//         ORDER BY created_at DESC
+//         ) AS full_posts
+//      JOIN users ON users.id = full_posts.poster_id`
+//   );
+// }
+
+//     if (posts.length) {
+//       res.status(200).json({
+//         status: "ok",
+//         posts,
+//         message: "Retrieved all posts",
+//       });
+//     } else {
+//       throw { status: 404, error: "No posts found." };
+//     }
+//   } catch (error) {
+//     next(error);
+//   }
+// };
 
 const getPostById = async (req, res, next) => {
   const { id } = req.params;
@@ -85,34 +99,34 @@ const getPostById = async (req, res, next) => {
   }
 };
 
-const createPost = (req, res, next) => {
+const createPost = async (req, res, next) => {
   try {
-    console.log("create post");
-    upload(req, res, (err) => {
-      try {
-        console.log("upload");
-        const { caption, poster_id, created_at } = req.body;
-        let picture = "/uploads/" + req.file.filename;
+    // upload(req, res, (err) => {
+    // try {
+    // console.log("upload");
+    const { poster_id, body } = req.body;
+    // let picture = "/uploads/" + req.file.filename; picture,,$4
+    // console.log(req.body);
+    let newPost = await db.one(
+      `INSERT INTO posts (poster_id, body) 
+                                VALUES($1,$2) RETURNING *`,
+      [poster_id, body /* picture,*/]
+    );
 
-        db.one(
-          `INSERT INTO posts (caption, poster_id,picture, created_at) 
-                                VALUES($1 ,$2,$3,$4) RETURNING *`,
-          [caption, poster_id, picture, created_at]
-        ).then((done) => {
-          console.log("then");
-          res.status(200).json({
-            status: "ok",
-            post: done,
-            message: "Created post",
-          });
-        });
-      } catch (err) {
-        console.log(err);
-        next(err);
-      }
+    res.status(200).json({
+      status: "ok",
+      // post: done,
+      newPost,
+      message: "Created post",
     });
+    // });
+    // } catch (err) {
+    //   console.log(err);
+    //   next(err);
+    // }
+    // });
   } catch (error) {
-    console.log(error);
+    console.log(error, "could not post");
     next(error);
   }
 };
@@ -132,7 +146,7 @@ const deletePost = async (req, res, next) => {
 };
 
 module.exports = {
-  getAllPosts,
+  showAllPosts,
   getPostById,
   createPost,
   deletePost,

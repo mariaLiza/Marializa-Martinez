@@ -1,7 +1,7 @@
--- DROP DATABASE IF EXISTS tweets_database;
--- CREATE DATABASE tweets_database;
+DROP DATABASE IF EXISTS tweets_database;
+CREATE DATABASE tweets_database;
 
--- \c tweets_database;
+\c tweets_database;
 
 /* 
 
@@ -28,10 +28,10 @@ CREATE TABLE users
 CREATE TABLE posts
 (
   id SERIAL PRIMARY KEY,
-  caption TEXT,
-  poster_id VARCHAR NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  poster_id VARCHAR REFERENCES users(id) ON DELETE CASCADE,
   body TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+  
 );
 
 

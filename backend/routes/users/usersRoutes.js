@@ -15,7 +15,7 @@ const {
 } = require("../../queries/users/usersQueries");
 
 //nested
-users.use("/:id/posts", userPostsRouter);
+users.use("/:id/posts", checkFirebaseToken, userPostsRouter);
 // isUserExisting
 users.get("/:id", checkFirebaseToken, getUserById);
 users.post("/", createNewUser);

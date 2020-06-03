@@ -1,8 +1,10 @@
 const posts = require("express").Router();
 const postTagsRouter = require("./postTags/postTagsRoutes");
+const uploads = require("../../queries/posts/uploads");
+// const { checkFirebaseToken } = require("../../middleware/auth");
 
 const {
-  getAllPosts,
+  showAllPosts,
   getPostById,
   createPost,
   deletePost,
@@ -11,9 +13,9 @@ const {
 
 posts.use("/:id/tags", postTagsRouter);
 
-posts.get("/", getAllPosts);
+posts.get("/", showAllPosts);
 posts.get("/:id", isPostExisting, getPostById);
-posts.post("/", createPost);
+posts.post("/", uploads, createPost);
 posts.delete("/:id", isPostExisting, deletePost);
 
 module.exports = posts;

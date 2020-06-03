@@ -33,6 +33,7 @@ const getUserById = async (req, res, next) => {
       message: "Retrieved user",
     });
   } catch (error) {
+    console.log(error)
     next(error);
   }
 };
