@@ -7,14 +7,12 @@ dark div color #39434c
 light blue classic #1da1f2
 */
 
-/* .userInfoDiv */
+/* The z-index CSS property sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one. */
 
 #userH1 {
   display: flex;
   font-size: larger;
   justify-self: start;
-  /* margin-top: 10px;
-  /* padding: 25px; */
   padding: 15px 5px 5px 10px;
   position: relative;
   

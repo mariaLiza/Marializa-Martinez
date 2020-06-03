@@ -22,7 +22,7 @@ light blue classic #1da1f2
   border-right: 0.5px solid #8899a69a;
   width: 100%;
   height: max-content;
-  padding: 25px 70px 25px 70px;
+  padding: 25px 80px 25px 40px;
 }
 
 .allPostsListDiv:hover {
@@ -47,5 +47,5 @@ light blue classic #1da1f2
   padding-top: 2em;
   padding-bottom: 2em;
   padding-left: 2em;
-  margin-left: 20%;
+  margin-left: 3em;
 }

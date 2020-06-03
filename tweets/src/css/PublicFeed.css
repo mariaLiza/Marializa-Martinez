@@ -11,14 +11,14 @@ light blue classic #1da1f2
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-left: 105%;
+  margin-left: 80%;
   justify-content: space-between;
   border-bottom: 1px outset #8899a6;
   border-right: 0.5px solid #8899a69a;
   border-left: 0.5px solid #8899a69a;
   width: 100%;
   height: max-content;
-  padding: 25px 70px 25px 70px;
+  padding: 25px 80px 25px 40px;
 }
 
 .publicPostsListDiv:hover {
@@ -70,7 +70,7 @@ light blue classic #1da1f2
     padding-top: 2em;
     padding-bottom: 2em;
     padding-left: 2em;
-    margin-left: 20%;
+    margin-left: 3em;
   /* display: flex;
   font-size: large;
   color: whitesmoke;
