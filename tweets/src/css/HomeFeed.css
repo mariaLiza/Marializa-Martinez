@@ -1,0 +1,34 @@
+/* 
+//colors:
+main-background-color: #15202B;
+light grey text #8899a6 
+dark input color #192734
+dark div color #39434c
+light blue classic #1da1f2
+*/
+
+
+
+
+
+  .allPostsListDiv {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 26%;
+    /* margin-left: 38%; */
+    border-bottom: 1px outset #8899a6;
+    /* padding: 5px 5px 5px 10px; */
+    width:61%;
+    height: max-content;
+    padding: 11px;
+  }
+
+  #allPostBodyP {
+  display: flex;
+  font-size: large;
+  color: whitesmoke;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 12%;
+  }

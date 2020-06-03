@@ -1,14 +1,13 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { apiURL } from "../util/apiURL";
-import { AuthContext } from "../providers/AuthContext";
+// import { AuthContext } from "../providers/AuthContext";
 import profilePic from "../images/sidebarIcons/profile white.png";
-import "../css/HomeFeed.css";
+import "../css/PublicFeed.css";
 
-const HomeFeed = () => {
+const PublicFeed = () => {
   const API = apiURL();
-  const { currentUser } = useContext(AuthContext);
-  const [feed, setFeed] = useState([]);
+  const [publicFeed, setPublicFeed] = useState([]);
 
   useEffect(() => {
     const showAllPosts = async () => {
@@ -17,7 +16,7 @@ const HomeFeed = () => {
           method: "get",
           url: `${API}/api/posts`,
         });
-        setFeed(res.data.postsAll);
+        setPublicFeed(res.data.postsAll);
         // debugger
       } catch (err) {
         console.log(err);
@@ -26,7 +25,7 @@ const HomeFeed = () => {
     showAllPosts();
   }, []);
 
-  let feedList = feed.map((post, i) => {
+  let publicFeedList = publicFeed.map((post, i) => {
     return (
       <div key={i} className="allPostsListDiv">
         <div className="rowContainer">
@@ -44,9 +43,9 @@ const HomeFeed = () => {
 
   return (
     <>
-      <div>{feedList}</div>
+      <div>{publicFeedList}</div>
     </>
   );
 };
 
-export default HomeFeed;
+export default PublicFeed;

@@ -3,6 +3,7 @@ import { AuthContext } from "../providers/AuthContext";
 import RightSideBar from "./RightSideBar";
 import LeftSideBar from "./LeftSideBar";
 import HomeFeed from "./HomeFeed";
+import PublicFeed from "./PublicFeed";
 import "../css/Home.css";
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
     if (!currentUser) {
       return (
         <>
+          <PublicFeed />
           <RightSideBar />
         </>
       );
