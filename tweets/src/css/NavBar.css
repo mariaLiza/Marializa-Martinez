@@ -12,16 +12,16 @@ nav {
   width: 101%;
   position: sticky;
   top: 0;
-  background-color: #15202B;
+  background-color: #15202b;
   opacity: 1;
   z-index: 5;
 }
 
 #home {
-  width: 3.2em;
+  width: 3em;
   height: auto;
-  padding-bottom: 1em;
-  margin-top: 0;
+  margin-bottom: 2em;
+  border-radius: 100%;
 }
 
 #home:active {
@@ -66,11 +66,11 @@ nav {
 }
 .active:hover {
   background-color: #1779b6;
+  border-radius: 100%;
 }
 .active:active {
   position: relative;
   top: 1px;
-  background-color: #1779b6;
 }
 
 #signup:hover {
@@ -104,16 +104,17 @@ nav {
 }
 
 #profilePic {
-  margin-top: 3px;
   width: 1em;
   height: auto;
-  padding-top: 7px;
+  margin-top: 18px;
+  border-radius: 100%;
 }
 
 #profile {
   text-decoration: none;
   color: whitesmoke;
   font-size: large;
+  border-radius: 100%;
 }
 
 #searchForm {
@@ -128,18 +129,21 @@ nav {
 }
 
 #searchInput {
+  display: flex;
   width: 25em;
   height: 2em;
   margin-top: 7px;
+  padding: 10px;
   border-radius: 25px;
-  text-align: center;
+  text-align: flex-start;
   background-color: #253341;
   border: none;
   font-size: 1em;
 }
 
 input::placeholder {
-  text-align: center;
+  display: flex;
+  text-align: flex-start;
   font-size: 11pt;
   color: #8899a6;
 }

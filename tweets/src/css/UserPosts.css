@@ -49,8 +49,8 @@ light blue classic #1da1f2
   justify-content: flex-start;
   border-radius: 100%;
   border: 1px solid #8899a6;
-  width: 3em;
-  height: 3em;
+  width: 4em;
+  height: 4em;
 }
 
 .rowContainer {
@@ -79,5 +79,5 @@ light blue classic #1da1f2
   color: whitesmoke;
   padding-top: 2em;
   padding-left: 2em;
-  margin-left: 3em;
+  margin-left: 4em;
 }

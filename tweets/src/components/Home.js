@@ -29,10 +29,13 @@ const Home = () => {
   };
 
   return (
-    <div id="mainHomeDiv">
-      {displaySideBar()}
-      <Footer />
-    </div>
+    <>
+      <div id="mainHomeDiv">
+        {displaySideBar()}
+      
+        <Footer />
+      </div>
+    </>
   );
 };
 

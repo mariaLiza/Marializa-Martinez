@@ -1,6 +1,4 @@
-/* <div id="dateDiv" class="date"> */
-        /* <h4 id="dob">Date of birth</h4>
-        <p id="dobInfo"> */
+
 
 #dob {
     display: flex;
@@ -8,7 +6,7 @@
     font-weight: bolder;
     margin-left: 30px;
     font-size: medium;
-    padding-bottom: 5px;
+    padding-bottom: 25px;
 }
 
 #dobInfo {

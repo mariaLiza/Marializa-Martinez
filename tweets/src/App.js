@@ -7,9 +7,8 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import AuthProvider from "./providers/AuthContext";
 import MakeTweet from "./components/MakeTweet";
-import "./App.css";
 import { AuthRoute, ProtectedRoute } from "./util/routeUtil";
-
+import "./App.css";
 
 function App() {
   return (

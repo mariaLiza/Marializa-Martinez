@@ -1,21 +1,9 @@
 #mainHomeDiv {
-  /* margin: auto; */
   display: grid;
   grid-template-columns: 25% 50% 25%;
   justify-content: space-evenly;
   width: 100%;
   height: auto;
-  /* border-right: 1px solid #8899a6; */
+  
 }
 
-/* public -- Explore
-For you
-COVID-19
-Trending
-News
-Sports
-Fun
-Entertainment */
-
-/* user home -- Home
-another smaller makeTweet */

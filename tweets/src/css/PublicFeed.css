@@ -7,30 +7,51 @@ dark div color #39434c
 light blue classic #1da1f2
 */
 
+#exploreH2 {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  color: #1da1f2;
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 14.1em;
+  height: 10em;
+  width: 100%;
+  padding: 10px 200px 10px 10px;
+  border-right: 1px solid #8899a69a;
+  border-left: 1px solid #8899a69a;
+  background-image: url("https://i0.wp.com/www.time24.news/wp-content/uploads/2020/05/gif-eua.gif?fit=600%2C338&ssl=1");
+}
+
 .publicPostsListDiv {
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-left: 80%;
+  margin-left: 84%;
   justify-content: space-between;
-  border-bottom: 1px outset #8899a6;
-  border-right: 0.5px solid #8899a69a;
+  border-top: 1px outset #8899a6;
+  border-right: 1px solid #8899a69a;
   border-left: 0.5px solid #8899a69a;
   width: 100%;
   height: max-content;
-  padding: 25px 80px 25px 40px;
+  padding: 25px 140px 25px 70px;
+}
+
+#exploreH2:hover {
+  color: #1779b6;
+}
+
+#publicHappeningNow {
+  display: flex;
+  font-size: medium;
+  font-weight: lighter;
+  color: rgba(245, 245, 245, 0.856);
 }
 
 .publicPostsListDiv:hover {
-    background-color: #192734;
-  }
-
-/* .publicFeedDiv {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin-left: 75%;
-} */
+  background-color: #192734;
+}
 
 .rowContainerPublic {
   display: flex;
@@ -39,8 +60,8 @@ light blue classic #1da1f2
 }
 
 .rowContainerPublic > p {
-    padding: 10px;
-    margin: 0;
+  padding: 10px;
+  margin: 0;
 }
 
 #postPublicProfPic {
@@ -48,8 +69,8 @@ light blue classic #1da1f2
   flex-direction: initial;
   border-radius: 100%;
   border: 1px solid #8899a6;
-  width: 3em;
-  height: 3em;
+  width: 4em;
+  height: 4em;
 }
 
 #userNamePublicP {
@@ -64,17 +85,11 @@ light blue classic #1da1f2
 }
 
 #allPostBodyPublicP {
-    display: flex;
-    font-size: large;
-    color: whitesmoke;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    padding-left: 2em;
-    margin-left: 3em;
-  /* display: flex;
+  display: flex;
   font-size: large;
   color: whitesmoke;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 17%; */
+  padding-top: 2em;
+  padding-bottom: 2em;
+  padding-left: 2em;
+  margin-left: 4em;
 }

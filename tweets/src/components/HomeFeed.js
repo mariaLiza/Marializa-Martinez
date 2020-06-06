@@ -33,7 +33,13 @@ const HomeFeed = () => {
         <div className="rowContainerHomeFeed">
           <p id="picP">
             {" "}
-            <img id="postProfilePic" src={profilePic} alt="profile image" />
+            <img
+              id="postProfilePic"
+              src={
+                "https://ya-webdesign.com/transparent250_/blank-profile-picture-png-2.png"
+              }
+              alt="profile image"
+            />
           </p>
           <p id="userNameP">@{post.username}</p>
           <p id="dateStampP">{post.created_at}</p>
@@ -45,8 +51,10 @@ const HomeFeed = () => {
 
   return (
     <>
-      {/* <MakeTweet /> */}
-      <div>{feedList}</div>
+      <div>
+        <div id="exploreH1">Explore <p id="happeningP">Happening Right Now</p></div>
+        <div> {feedList}</div>
+      </div>
     </>
   );
 };

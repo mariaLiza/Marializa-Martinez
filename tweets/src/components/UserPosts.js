@@ -43,7 +43,13 @@ const UserPosts = () => {
         <div className="rowContainer">
           <p id="picP">
             {" "}
-            <img id="postProfilePic" src={profilePic} alt="profile image" />
+            <img
+              id="postProfilePic"
+              src={
+                "https://ya-webdesign.com/transparent250_/blank-profile-picture-png-2.png"
+              }
+              alt="profile image"
+            />
           </p>
           <p id="userNameP">@{post.username}</p>
           <p id="dateStampP">{post.created_at}</p>

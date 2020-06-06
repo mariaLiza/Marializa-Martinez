@@ -27,14 +27,8 @@ const NavBar = (params) => {
           <a id="logout" onClick={logout}>
             Log Out
           </a>
-          <NavLink id="profile" to="/profile">
-            Profile{" "}
-            <img
-              className="active"
-              id="profilePic"
-              src={profilePic}
-              alt="profile image"
-            />
+          <NavLink id="profile" className="active" to="/profile">
+            Profile <img id="profilePic" src={profilePic} alt="profile image" />
           </NavLink>
         </>
       );

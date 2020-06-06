@@ -60,7 +60,7 @@ const MakeTweets = () => {
       console.log(config, "conf");
       let res = await axios.post(`${API}/api/posts`, formData, config);
       setNewPost(res);
-      debugger;
+      // debugger;
       history.push("/profile");
     } catch (err) {
       console.log(err);
@@ -98,7 +98,6 @@ const MakeTweets = () => {
             cols="20"
             placeholder="What's happening?"
             type="text"
-            {...body}
           ></textarea>
           <div className="makeTweetIcons">
             <ul className="iconListMT">

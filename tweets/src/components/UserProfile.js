@@ -21,16 +21,19 @@ const UserProfile = () => {
         headers: {
           AuthToken: token,
         },
-      });
+      })
+      console.log(currentUser.uid, "current uid")
       setUser(res.data.user);
+      console.log(res.data.user)
     };
     fetchUserById();
   }, []);
-
+  
+  console.log(user, "outside")
   return (
     <>
       <LeftSideBar />
-      <UserProfileInfo />
+      <UserProfileInfo user={user}/>
       <UserPosts />
       <Footer />
     </>

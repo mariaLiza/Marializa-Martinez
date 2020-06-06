@@ -43,7 +43,10 @@ const PublicFeed = () => {
 
   return (
     <>
-      <div className="publicFeedDiv">{publicFeedList}</div>
+      <div>
+        <div id="exploreH2">Explore <p id="publicHappeningNow">Happning Right Now</p></div>
+        <div className="publicFeedDiv">{publicFeedList}</div>
+      </div>
     </>
   );
 };
