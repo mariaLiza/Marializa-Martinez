@@ -31,7 +31,13 @@ const PublicFeed = () => {
         <div className="rowContainerPublic">
           <p id="picP">
             {" "}
-            <img id="postPublicProfPic" src={profilePic} alt="profile image" />
+            <img
+              id="postPublicProfPic"
+              src={
+                "https://ya-webdesign.com/transparent250_/blank-profile-picture-png-2.png"
+              }
+              alt="profile image"
+            />
           </p>
           <p id="userNamePublicP">@{post.username}</p>
           <p id="dateStampPublicP">{post.created_at}</p>
@@ -44,7 +50,9 @@ const PublicFeed = () => {
   return (
     <>
       <div>
-        <div id="exploreH2">Explore <p id="publicHappeningNow">Happning Right Now</p></div>
+        <div id="exploreH2">
+          Explore <p id="publicHappeningNow">Happning Right Now</p>
+        </div>
         <div className="publicFeedDiv">{publicFeedList}</div>
       </div>
     </>
