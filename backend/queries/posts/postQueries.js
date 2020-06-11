@@ -25,7 +25,9 @@ const isPostExisting = async (req, res, next) => {
 
 const showAllPosts = async (req, res, next) => {
   try {
-    let postsAll = await db.any('SELECT posts.*, users.username FROM posts LEFT JOIN users ON posts.poster_id = users.id ORDER BY created_at DESC');
+    let postsAll = await db.any(
+      "SELECT posts.*, users.username FROM posts LEFT JOIN users ON posts.poster_id = users.id FULL JOIN tags ON tags.post_id = posts.id ORDER BY created_at DESC"
+    );
     res.status(200).json({
       status: "ok",
       postsAll,
