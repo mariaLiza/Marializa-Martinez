@@ -15,8 +15,11 @@ const MakeTweets = () => {
   const { currentUser, token } = useContext(AuthContext);
   const API = apiURL();
   const body = useInput("");
+  const tagOne = useInput("");
+  // const [postId, setPostId] = useState("");
   const [userId, setUserId] = useState("");
   const [newPost, setNewPost] = useState("");
+  const [newTag, setNewTag] = useState("");
   const history = useHistory();
 
   useEffect(() => {
@@ -55,12 +58,30 @@ const MakeTweets = () => {
           "content-type": "multipart/form-data",
         },
       };
-
-      console.log(formData, "formd");
-      console.log(config, "conf");
       let res = await axios.post(`${API}/api/posts`, formData, config);
       setNewPost(res);
-      // debugger;
+      // let idPost = parseInt(res.data.newPost.id)
+
+      let postId = res.data.newPost.id
+
+      let tags = tagOne.value
+      console.log(tags, "tags");
+     
+      let tagsRes = await axios.post(`${API}/api/tags`, {
+        post_id: parseInt(postId),
+        tags,
+      });
+      // setNewTag(tagsRes);
+      console.log(tagOne.value, "tag1val");
+      console.log(postId, "postid");
+      console.log(tagsRes, "tagsRes");
+      debugger;
+      // } catch (err) {
+      //   console.log(err);
+      // }
+      // };
+      // postTag();
+
       history.push("/profile");
     } catch (err) {
       console.log(err);
@@ -115,6 +136,7 @@ const MakeTweets = () => {
                 <img src={imgInsert} alt="img" />
               </li>
             </ul>
+            <input type="text" placeholder="#" {...tagOne} />
             <button type="submit" id="submitTweetBtn">
               Tweet
             </button>
