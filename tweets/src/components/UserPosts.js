@@ -9,6 +9,7 @@ const UserPosts = () => {
   const { currentUser, token } = useContext(AuthContext);
   const API = apiURL();
   const [userPosts, setUserPosts] = useState([]);
+  const [postTag, setPostTag] = useState("");
 
   useEffect(() => {
     const getUserPosts = async () => {
@@ -21,12 +22,15 @@ const UserPosts = () => {
           },
         });
         setUserPosts(res.data.posts);
+
+        debugger;
       } catch (err) {
         console.log(err);
       }
     };
     getUserPosts();
   }, []);
+
   // console.log(userPosts, "userPosts now");
 
   //my userpost obj=
@@ -55,6 +59,7 @@ const UserPosts = () => {
           <p id="dateStampP">{post.created_at}</p>
         </div>
         <p id="postBodyP">{post.body}</p>
+        <p>#{post.tags[0]}</p>
       </div>
     );
   });

@@ -28,8 +28,7 @@ const UserProfile = () => {
     };
     fetchUserById();
   }, []);
-  
-  console.log(user, "outside")
+
   return (
     <>
       <LeftSideBar />

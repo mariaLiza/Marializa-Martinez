@@ -162,3 +162,19 @@ li > img {
   text-decoration: none;
   /* color: inherit; */
 }
+
+#tagLabel {
+  display: flex;
+  flex-direction: column;
+  font-size: 12pt;
+  font-style: oblique;
+  font-weight: lighter;
+  color: #5d6164;
+}
+
+#tagInp {
+  background-color: #253341;
+  font-size: 12pt;
+  color: #1da1f2;
+  height: 2em;
+}

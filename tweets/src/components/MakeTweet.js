@@ -62,11 +62,11 @@ const MakeTweets = () => {
       setNewPost(res);
       // let idPost = parseInt(res.data.newPost.id)
 
-      let postId = res.data.newPost.id
+      let postId = res.data.newPost.id;
 
-      let tags = tagOne.value
+      let tags = tagOne.value;
       console.log(tags, "tags");
-     
+
       let tagsRes = await axios.post(`${API}/api/tags`, {
         post_id: parseInt(postId),
         tags,
@@ -106,9 +106,16 @@ const MakeTweets = () => {
           <div id="formDiv">
             <img
               id="makeTweetProfilePic"
-              src={profilePic}
+              src={
+                "https://ya-webdesign.com/transparent250_/blank-profile-picture-png-2.png"
+              }
               alt="profile image"
             />
+            {/* <img
+              id="makeTweetProfilePic"
+              src={profilePic}
+              alt="profile image"
+            /> */}
             {/* <label id="makeTweetLabel">What's happening?</label> */}
           </div>
 
@@ -136,7 +143,10 @@ const MakeTweets = () => {
                 <img src={imgInsert} alt="img" />
               </li>
             </ul>
-            <input type="text" placeholder="#" {...tagOne} />
+            <label id="tagLabel">
+              Enter a hashtag for your post
+              <input id="tagInp" type="text" placeholder="#" {...tagOne} />
+            </label>
             <button type="submit" id="submitTweetBtn">
               Tweet
             </button>
