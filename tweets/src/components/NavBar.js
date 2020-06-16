@@ -5,7 +5,7 @@ import { logout } from "../util/firebaseFunctions";
 import { AuthContext } from "../providers/AuthContext";
 import whiteBird from "../images/utilityIcons/whiteBird.png";
 import profilePic from "../images/sidebarIcons/profile white.png";
-import search from "../images/sidebarIcons/search-12-xl.png";
+import searchGlass from "../images/sidebarIcons/search-12-xl.png";
 import { useInput } from "../util/customHooks";
 import { apiURL } from "../util/apiURL";
 import axios from "axios";
@@ -18,7 +18,8 @@ const NavBar = (params) => {
   const onSubmit = (e) => {
     e.preventDefault();
     const getTags = async () => {
-      let res = await axios.get(`${API}/api/tags/${e.currentTarget.value}`);
+      let res = await axios.get(`${API}/api/tags/${search.value}`);
+
       debugger;
     };
     getTags();
@@ -29,7 +30,7 @@ const NavBar = (params) => {
       return (
         <>
           <form id="searchForm" onSubmit={onSubmit}>
-            <img id="searchIcon" src={search} alt="search" />
+            <img id="searchIcon" src={searchGlass} alt="search" />
             <input
               {...search}
               id="searchInput"
