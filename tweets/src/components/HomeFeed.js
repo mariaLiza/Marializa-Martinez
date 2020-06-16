@@ -45,6 +45,7 @@ const HomeFeed = () => {
           <p id="dateStampP">{post.created_at}</p>
         </div>
         <p id="allPostBodyP">{post.body}</p>
+        <p id="tag">#{post.tag}</p>
       </div>
     );
   });

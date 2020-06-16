@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import "../css/NavBar.css";
 import { NavLink } from "react-router-dom";
 import { logout } from "../util/firebaseFunctions";
@@ -6,19 +6,32 @@ import { AuthContext } from "../providers/AuthContext";
 import whiteBird from "../images/utilityIcons/whiteBird.png";
 import profilePic from "../images/sidebarIcons/profile white.png";
 import search from "../images/sidebarIcons/search-12-xl.png";
-// import { useInput } from "../util/customHooks";
+import { useInput } from "../util/customHooks";
+import { apiURL } from "../util/apiURL";
+import axios from "axios";
 
 const NavBar = (params) => {
-  //   const search = useInput("");
+  const API = apiURL();
+  const search = useInput("");
   const { currentUser } = useContext(AuthContext);
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const getTags = async () => {
+      let res = await axios.get(`${API}/api/tags/${e.currentTarget.value}`);
+      debugger;
+    };
+    getTags();
+  };
 
   const displayButtons = () => {
     if (currentUser) {
       return (
         <>
-          <form id="searchForm">
+          <form id="searchForm" onSubmit={onSubmit}>
             <img id="searchIcon" src={search} alt="search" />
             <input
+              {...search}
               id="searchInput"
               type="search"
               placeholder="Search Twitter by hashtag"

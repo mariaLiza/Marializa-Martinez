@@ -81,3 +81,9 @@ light blue classic #1da1f2
   padding-left: 2em;
   margin-left: 4em;
 }
+
+#tag {
+  display: flex;
+  flex-direction: column;
+  margin-left: 7em;
+}

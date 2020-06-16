@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../providers/AuthContext";
 import { apiURL } from "../util/apiURL";
 import axios from "axios";
-import profilePic from "../images/sidebarIcons/profile white.png";
+// import profilePic from "../images/sidebarIcons/profile white.png";
 import "../css/UserPosts.css";
 
 const UserPosts = () => {
@@ -31,16 +31,6 @@ const UserPosts = () => {
     getUserPosts();
   }, []);
 
-  // console.log(userPosts, "userPosts now");
-
-  //my userpost obj=
-  //   body: "mmm"
-  // created_at: "2020-06-02T02:09:35.274Z"
-  // id: 1
-  // poster_id: "9lPiIuEHy8Wi80zlStgbd15rhE12"
-  // tags: []
-  // username: "sunnyBrightSkies"
-
   let userPostList = userPosts.map((post, i) => {
     return (
       <div key={i} className="userPostsListDiv">
@@ -59,7 +49,7 @@ const UserPosts = () => {
           <p id="dateStampP">{post.created_at}</p>
         </div>
         <p id="postBodyP">{post.body}</p>
-        <p>#{post.tags[0]}</p>
+        <p id="tag">#{post.tags[0]}</p>
       </div>
     );
   });
