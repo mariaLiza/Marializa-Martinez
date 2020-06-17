@@ -8,7 +8,7 @@ import Footer from "./Footer";
 import "../css/Home.css";
 
 const Home = () => {
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser, loading } = useContext(AuthContext);
 
   const displaySideBar = () => {
     if (!currentUser) {
@@ -28,12 +28,14 @@ const Home = () => {
     }
   };
 
+  if (loading) return <div>Loading...</div>;
+
   return (
     <>
       <div id="mainHomeDiv">
         {displaySideBar()}
-      
-        <Footer />
+
+        {/* <Footer /> */}
       </div>
     </>
   );

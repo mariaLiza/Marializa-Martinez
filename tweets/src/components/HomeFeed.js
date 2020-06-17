@@ -8,7 +8,7 @@ import "../css/HomeFeed.css";
 
 const HomeFeed = () => {
   const API = apiURL();
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser, loading } = useContext(AuthContext);
   const [feed, setFeed] = useState([]);
 
   useEffect(() => {
@@ -49,6 +49,8 @@ const HomeFeed = () => {
       </div>
     );
   });
+
+  if (loading) return <div>Loading...</div>;
 
   return (
     <>

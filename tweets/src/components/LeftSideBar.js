@@ -21,7 +21,7 @@ const LeftSideBar = () => {
                 <img id="birdHouse" src={birdhouse} alt="home" />
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <img id="hash" src={hashtag} alt="explore" />
             </li>
             <li>
@@ -35,15 +35,15 @@ const LeftSideBar = () => {
             </li>
             <li>
               <img id="listIcon" src={lists} alt="lists" />
-            </li>
+            </li> */}
             <li>
               <NavLink className="link" exact to="/profile">
                 <img id="userProfile" src={profile} alt="profile" />
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <img id="moreCircle" src={morecircle} alt="more" />
-            </li>
+            </li> */}
           </ul>
           <ul id="leftSideText">
             <li>
@@ -51,17 +51,17 @@ const LeftSideBar = () => {
                 <p id="leftHomeText">Home</p>
               </NavLink>
             </li>
-            <li>Explore</li>
+            {/* <li>Explore</li>
             <li>Notifications</li>
             <li>Messages</li>
             <li>Bookmarks</li>
-            <li>Lists</li>
+            <li>Lists</li> */}
             <li>
               <NavLink className="link" exact to="/profile">
                 <p id="leftProfileText">Profile</p>
               </NavLink>
             </li>
-            <li>More</li>
+            {/* <li>More</li> */}
           </ul>
         </nav>
         <div>

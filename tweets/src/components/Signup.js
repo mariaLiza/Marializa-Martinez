@@ -10,7 +10,7 @@ import GetDatePicker from "./DatePicker";
 import { AuthContext } from "../providers/AuthContext";
 
 const Signup = () => {
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser, loading } = useContext(AuthContext);
 
   const [error, setError] = useState(null);
   const [email, setEmail] = useState("");
@@ -47,6 +47,8 @@ const Signup = () => {
     }
   };
 
+  if (loading) return <div>Loading...</div>;
+
   return (
     <>
       <div id="signUpDiv">
@@ -81,7 +83,7 @@ const Signup = () => {
             Next
           </button>
         </form>
-        <GetDatePicker />
+        {/* <GetDatePicker /> */}
       </div>
     </>
   );

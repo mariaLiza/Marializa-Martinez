@@ -6,7 +6,7 @@ import axios from "axios";
 import "../css/UserPosts.css";
 
 const UserPosts = () => {
-  const { currentUser, token } = useContext(AuthContext);
+  const { currentUser, token, loading } = useContext(AuthContext);
   const API = apiURL();
   const [userPosts, setUserPosts] = useState([]);
   const [postTag, setPostTag] = useState("");
@@ -23,7 +23,7 @@ const UserPosts = () => {
         });
         setUserPosts(res.data.posts);
 
-        debugger;
+        // debugger;
       } catch (err) {
         console.log(err);
       }
@@ -53,6 +53,8 @@ const UserPosts = () => {
       </div>
     );
   });
+
+  if (loading) return <div>Loading...</div>;
 
   return (
     <>

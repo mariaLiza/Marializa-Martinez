@@ -32,7 +32,7 @@ const AuthProvider = ({ children }) => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <AuthContext.Provider value={{currentUser, token}}>
+    <AuthContext.Provider value={{currentUser, token, loading}}>
       {children}
     </AuthContext.Provider>
   );

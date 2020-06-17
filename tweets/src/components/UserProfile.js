@@ -11,7 +11,7 @@ import "../css/UserProfile.css";
 const UserProfile = () => {
   const API = apiURL();
   const [user, setUser] = useState({});
-  const { token, currentUser } = useContext(AuthContext);
+  const { token, currentUser, loading } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchUserById = async () => {
@@ -21,18 +21,20 @@ const UserProfile = () => {
         headers: {
           AuthToken: token,
         },
-      })
-      console.log(currentUser.uid, "current uid")
+      });
+      console.log(currentUser.uid, "current uid");
       setUser(res.data.user);
-      console.log(res.data.user)
+      console.log(res.data.user);
     };
     fetchUserById();
   }, []);
 
+  if (loading) return <div>Loading...</div>;
+
   return (
     <>
       <LeftSideBar />
-      <UserProfileInfo user={user}/>
+      <UserProfileInfo user={user} />
       <UserPosts />
       <Footer />
     </>

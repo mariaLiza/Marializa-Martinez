@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { apiURL } from "../util/apiURL";
-// import { AuthContext } from "../providers/AuthContext";
+import { AuthContext } from "../providers/AuthContext";
 import profilePic from "../images/sidebarIcons/profile white.png";
 import "../css/PublicFeed.css";
 
 const PublicFeed = () => {
+  const { loading } = useContext(AuthContext);
   const API = apiURL();
   const [publicFeed, setPublicFeed] = useState([]);
 
@@ -17,7 +18,7 @@ const PublicFeed = () => {
           url: `${API}/api/posts`,
         });
         setPublicFeed(res.data.postsAll);
-        debugger
+        debugger;
       } catch (err) {
         console.log(err);
       }
@@ -47,6 +48,8 @@ const PublicFeed = () => {
       </div>
     );
   });
+
+  if (loading) return <div>Loading...</div>;
 
   return (
     <>
