@@ -7,7 +7,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import AuthProvider from "./providers/AuthContext";
 import MakeTweet from "./components/MakeTweet";
-import TagPosts from "./components/TagPosts"
+import TagPosts from "./components/TagPosts";
 import { AuthRoute, ProtectedRoute } from "./util/routeUtil";
 import "./App.css";
 
@@ -32,7 +32,7 @@ function App() {
           <ProtectedRoute exact path="/maketweet">
             <MakeTweet />
           </ProtectedRoute>
-          <ProtectedRoute exact path="/tagposts/:tagsPosts">
+          <ProtectedRoute path="/tag/:posts">
             <TagPosts />
           </ProtectedRoute>
 

@@ -1,6 +1,14 @@
 import React, { useState, useContext } from "react";
 import "../css/NavBar.css";
-import { NavLink, useHistory, Link, useLocation, Route } from "react-router-dom";
+import {
+  NavLink,
+  useHistory,
+  Switch,
+  Link,
+  useLocation,
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
 import { logout } from "../util/firebaseFunctions";
 import { AuthContext } from "../providers/AuthContext";
 import whiteBird from "../images/utilityIcons/whiteBird.png";
@@ -11,61 +19,38 @@ import { apiURL } from "../util/apiURL";
 import axios from "axios";
 import TagPosts from "./TagPosts";
 
+
 const NavBar = () => {
   const history = useHistory();
   const API = apiURL();
   const search = useInput("");
   const { currentUser, loading } = useContext(AuthContext);
   const [tagPosts, setTagPosts] = useState([]);
-  // const location = useLocation();
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const getTags = async () => {
+  const tagsRedirect = (tagposts) => history.push(`/tag/${tagposts}`);
+
+  const getTags = async () => {
+    try {
       let res = await axios.get(`${API}/api/tags/${search.value}`);
       setTagPosts(res.data.posts);
-      // location = {
-        //   pathname: "/tagposts",
-        //   state: { tagPosts: true },
-        // };
-        // history.push(location);
-        
-        
-        // debugger;
-        console.log(res.data.posts)
-      };
-      getTags();
-    };
-    console.log(tagPosts)
-    history.push("/tagposts", { state: tagPosts });
-  // let tagPostsList = tagPosts.map((post, i) => {
-  //   return (
-  //     <div key={i} className="userPostsListDiv">
-  //       <div className="rowContainer">
-  //         <p id="picP">
-  //           {" "}
-  //           <img
-  //             id="postProfilePic"
-  //             src={
-  //               "https://ya-webdesign.com/transparent250_/blank-profile-picture-png-2.png"
-  //             }
-  //             alt="profile image"
-  //           />
-  //         </p>
-  //         <p id="userNameP">@{post.username}</p>
-  //         <p id="dateStampP">{post.created_at}</p>
-  //       </div>
-  //       <p id="postBodyP">{post.body}</p>
-  //       <p id="tag">#{post.tags[0]}</p>
-  //     </div>
-  //   );
-  // });
+      
+    } catch (error) {
+      console.log(error);
+    }
+  };
+ 
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    getTags();
+    tagsRedirect(tagPosts)
+  };
 
   const displayButtons = () => {
     if (currentUser) {
       return (
         <>
-          <form id="searchForm" onSubmit={onSubmit}>
+          <form id="searchForm" onSubmit={handleSubmit}>
             <img id="searchIcon" src={searchGlass} alt="search" />
             <input
               {...search}
@@ -73,6 +58,9 @@ const NavBar = () => {
               type="search"
               placeholder="Search Twitter by hashtag"
             />
+            {/* <button type="submit" onClick={() => tagsRedirect(tagPosts)}>
+              Submit
+            </button> */}
           </form>
           <a id="logout" onClick={logout}>
             Log Out
@@ -99,12 +87,30 @@ const NavBar = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <nav>
-      <NavLink exact to="/">
-        <img id="home" src={whiteBird} alt="home" />
-      </NavLink>
-      {displayButtons()}
-    </nav>
+    <>
+      <nav>
+        <NavLink exact to="/">
+          <img id="home" src={whiteBird} alt="home" />
+        </NavLink>
+        {displayButtons()}
+      </nav>
+      {/* {tagPosts.length ? <Route to="/tags">
+      <TagPosts tagPosts={results} /> : ""
+      </Route>
+      } */}
+      {/* {tagPosts.length ? (
+        <Switch>
+          <Route
+            exact
+            to="/tags"
+            render={() => <TagPosts results={results} />}
+          />
+        </Switch>
+      ) : (
+        ""
+      )} */}
+      <TagPosts tagPosts={tagPosts} />
+    </>
   );
 };
 

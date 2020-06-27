@@ -49,7 +49,8 @@ const UserPosts = () => {
           <p id="dateStampP">{post.created_at}</p>
         </div>
         <p id="postBodyP">{post.body}</p>
-        <p id="tag">#{post.tags[0]}</p>
+        {post.tags[0] ? <p id="tag">#{post.tags[0]}</p> : <p></p>}
+        {/* <p id="tag">#{post.tags[0]}</p> */}
       </div>
     );
   });

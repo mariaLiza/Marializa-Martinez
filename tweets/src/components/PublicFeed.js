@@ -18,7 +18,7 @@ const PublicFeed = () => {
           url: `${API}/api/posts`,
         });
         setPublicFeed(res.data.postsAll);
-        debugger;
+        // debugger;
       } catch (err) {
         console.log(err);
       }
@@ -44,7 +44,7 @@ const PublicFeed = () => {
           <p id="dateStampPublicP">{post.created_at}</p>
         </div>
         <p id="allPostBodyPublicP">{post.body}</p>
-        <p id="tag">#{post.tag}</p>
+       { post.tag ? <p id="tag">#{post.tag}</p> : <p></p>}
       </div>
     );
   });

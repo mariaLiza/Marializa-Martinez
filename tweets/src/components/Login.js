@@ -17,7 +17,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await login(email, password);
-      history.push("/");
+      history.push("/profile");
     } catch (err) {
       setError(err.message);
     }

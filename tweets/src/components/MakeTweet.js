@@ -21,6 +21,7 @@ const MakeTweets = () => {
   const [newPost, setNewPost] = useState("");
   const [newTag, setNewTag] = useState("");
   const history = useHistory();
+  
 
   useEffect(() => {
     const getUser = async () => {
@@ -75,7 +76,7 @@ const MakeTweets = () => {
       console.log(tagOne.value, "tag1val");
       console.log(postId, "postid");
       console.log(tagsRes, "tagsRes");
-      debugger;
+      // debugger;
       // } catch (err) {
       //   console.log(err);
       // }

@@ -39,7 +39,7 @@ const Signup = () => {
       // }
       setUser(res.data.user[0]);
       // debugger;
-      history.push("/profile");
+      history.push("/");
       // console.log(user, "user")
       // console.log(res.data.user, "resuser")
     } catch (err) {
