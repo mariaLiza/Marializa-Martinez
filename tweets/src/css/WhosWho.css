@@ -1,0 +1,60 @@
+/* 
+//colors:
+main-background-color: #15202B;
+light grey text #8899a6 
+dark input color #192734
+dark div color #39434c
+light blue classic #1da1f2
+*/
+
+.whosContainer {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  border-radius: 10px;
+  border: 0.5px solid #8899a69a;
+  height: auto;
+  width: 18em;
+  margin-top: 10px;
+  margin-left: 67.5%;
+  margin-right: 15%;
+  margin-bottom: 10px;
+  padding: 10px;
+  position: fixed;
+}
+
+.whosWhoEach {
+  background-color: #192734;
+  padding: 1em;
+  border: 1px #8899a69a solid;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.whoH1 {
+  font-size: larger;
+  padding: 5px;
+}
+
+.whosPic {
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 100%;
+  width: 4em;
+  height: 4em;
+}
+
+.picNname {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  font-size: large;
+  margin: auto;
+}
+
+.userNameP {
+  padding: 1em;
+  font-weight: 500;
+  color: #1da1f2;
+  cursor: pointer;
+}
