@@ -22,7 +22,7 @@ const RightSideBar = () => {
 
   return (
     <>
-      <div id="sbDiv">
+      <div className="sbDiv">
         <form id="sbForm" className="sideBarForm" onSubmit={handleSubmit}>
           <img id="sidePic" src={pic} alt="see what's happening" />
           <h4 id="sbH">See what’s happening in the world right now</h4>

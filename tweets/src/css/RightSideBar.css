@@ -4,7 +4,7 @@ dark div color #39434c
 light blue classic #1da1f2
 */
 
-#sbDiv {
+.sbDiv {
   display: flex;
   float: right;
   border-radius: 10px;

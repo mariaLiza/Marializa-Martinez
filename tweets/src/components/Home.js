@@ -5,6 +5,7 @@ import LeftSideBar from "./LeftSideBar";
 import HomeFeed from "./HomeFeed";
 import PublicFeed from "./PublicFeed";
 import Footer from "./Footer";
+import WhosWho from "./WhosWho";
 import "../css/Home.css";
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
         <>
           <HomeFeed />
           <LeftSideBar />
+          <WhosWho />
         </>
       );
     }
