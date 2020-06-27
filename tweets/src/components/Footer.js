@@ -6,12 +6,28 @@ const Footer = () => {
     <>
       <div>
         <ul id="footerUl">
-          <li>Terms</li>
-          <li>Privacy policy</li>
-          <li>Cookies</li>
-          <li>Ads info</li>
-          <li>More</li>
-          <li>© 2020 Twitter, Inc.</li>
+          <li>
+            <a className="atags"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/marializamartinez/"
+            >
+              <p>LinkedIn</p>
+            </a>
+          </li>
+          <li>
+            <a className="atags"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/mariaLiza"
+            >
+              <p>Github</p>
+            </a>
+          </li>
+
+          <li>
+         <p> © 2020 Tweets, Inc.</p>
+          </li>
         </ul>
       </div>
     </>

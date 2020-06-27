@@ -32,7 +32,7 @@ function App() {
           <ProtectedRoute exact path="/maketweet">
             <MakeTweet />
           </ProtectedRoute>
-          <ProtectedRoute path="/tag/:posts">
+          <ProtectedRoute path="/tag/:searchValue">
             <TagPosts />
           </ProtectedRoute>
 

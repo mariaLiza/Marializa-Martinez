@@ -1,22 +1,29 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-// import axios from "axios";
-// import { apiURL } from "../util/apiURL";
+import axios from "axios";
+import { apiURL } from "../util/apiURL";
 import { AuthContext } from "../providers/AuthContext";
-// import DisplayTagPosts from "../components/DisplayTagPosts";
 
-const TagPosts = ({ tagPosts }) => {
+const TagPosts = () => {
+  const API = apiURL();
   const { loading } = useContext(AuthContext);
-  // const { search } = useParams();
-  // const { API } = apiURL();
-  // const [tagPosts, setTagPosts] = useState([]);
-  // const { tagPosts } = useParams();
-  // debugger;
-  console.log(tagPosts);
+  const [tagPosts, setTagPosts] = useState([]);
+  const { searchValue } = useParams();
 
-  // useEffect(() => {
-  // debugger
-  // }, [tagPosts])
+  console.log(searchValue);
+
+
+  useEffect(() => {
+    const getTags = async () => {
+      try {
+        let res = await axios.get(`${API}/api/tags/${searchValue}`);
+        setTagPosts(res.data.posts);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getTags();
+  }, []);
 
   const results = tagPosts.map((post, i) => {
     return (
@@ -42,12 +49,11 @@ const TagPosts = ({ tagPosts }) => {
   });
 
   if (loading) return <div>Loading...</div>;
-  //
-  return <div>
-  <div>{results}
-  
-  </div>
-  </div>;
+  return (
+    <div>
+      <div>{results}</div>
+    </div>
+  );
 };
 
 export default TagPosts;

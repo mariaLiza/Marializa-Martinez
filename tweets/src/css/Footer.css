@@ -9,7 +9,7 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  
+  padding-bottom: 1em;
   padding-right: 100px;
   width: 25%;
   font-size: 10pt;
@@ -21,4 +21,20 @@ li {
 
 li:hover {
     text-decoration: underline;
+    color: #1da1f2;
+}
+
+.atags:hover {
+  text-decoration: underline;
+  color: #1da1f2;
+}
+
+li:active {
+  text-decoration: underline;
+  color: #1da1f2;
+}
+
+.atags:active {
+  text-decoration: underline;
+  color: #1da1f2;
 }
