@@ -6,6 +6,8 @@ import axios from "axios";
 import twitterLogo from "../images/Twitter_logo.png";
 import banner from "../images/banner.jpg";
 import WhosPosts from "./WhosPosts";
+import LeftSideBar from "./LeftSideBar";
+import Footer from "./Footer";
 
 const WhosWhoDisplay = () => {
   const [thisUser, setThisUser] = useState({});
@@ -18,7 +20,6 @@ const WhosWhoDisplay = () => {
 
   useEffect(() => {
     getUsers();
-    
   }, []);
 
   const getUsers = async () => {
@@ -30,14 +31,13 @@ const WhosWhoDisplay = () => {
     }
   };
 
-
   let theUser = users.map((user, i) => {
     if (username === user.username)
       return (
         <div className="userInfoDiv" id="divUserInfo">
           <h1 id="userH1">{username}</h1>
           <div id="userInfoContainer">
-            <img id="backgroundLogo" src={banner} alt={twitterLogo} />
+            <img id="backgroundLogo" alt={banner} src={twitterLogo} />
             <div id="updateDiv">
               {" "}
               <img
@@ -65,9 +65,14 @@ const WhosWhoDisplay = () => {
   });
   console.log(theUser);
 
-  return <>{theUser}
-  <WhosPosts username={username} />
-  </>;
+  return (
+    <>
+      <LeftSideBar />
+      {theUser}
+      <WhosPosts username={username} />
+      <Footer />
+    </>
+  );
 };
 
 export default WhosWhoDisplay;

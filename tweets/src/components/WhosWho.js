@@ -6,11 +6,11 @@ import axios from "axios";
 import "../css/WhosWho.css";
 
 const WhosWho = () => {
-  const { loading } = useContext(AuthContext);
+  const { loading, currentUser } = useContext(AuthContext);
   const API = apiURL();
   const [users, setUsers] = useState([]);
   const history = useHistory();
-//   const [username, setUserName] = useState("");
+  //   const [username, setUserName] = useState("");
   const userNameRedirect = (username) => history.push(`/users/${username}`);
 
   useEffect(() => {
@@ -20,15 +20,15 @@ const WhosWho = () => {
   const getAllUsers = async () => {
     try {
       let res = await axios.get(`${API}/api/users`);
-      setUsers(res.data.users.slice(0, 2));
+      setUsers(res.data.users.slice(0, 3));
     } catch (error) {
       console.log(error);
     }
   };
 
   const usersDisplay = users.map((user, i) => {
-    const username = (user.username);
-   
+    const username = user.username;
+
     return (
       <div className="whosWhoEach" key={i}>
         <div className="picNname">
