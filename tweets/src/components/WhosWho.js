@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { AuthContext } from "../providers/AuthContext";
 import { apiURL } from "../util/apiURL";
 import axios from "axios";
@@ -8,6 +9,9 @@ const WhosWho = () => {
   const { loading } = useContext(AuthContext);
   const API = apiURL();
   const [users, setUsers] = useState([]);
+  const history = useHistory();
+//   const [username, setUserName] = useState("");
+  const userNameRedirect = (username) => history.push(`/users/${username}`);
 
   useEffect(() => {
     getAllUsers();
@@ -17,13 +21,14 @@ const WhosWho = () => {
     try {
       let res = await axios.get(`${API}/api/users`);
       setUsers(res.data.users.slice(0, 2));
-      debugger;
     } catch (error) {
-      console.logz(error);
+      console.log(error);
     }
   };
 
   const usersDisplay = users.map((user, i) => {
+    const username = (user.username);
+   
     return (
       <div className="whosWhoEach" key={i}>
         <div className="picNname">
@@ -40,7 +45,9 @@ const WhosWho = () => {
               />
             )}
           </p>
-          <p className="userNameP">{user.username}</p>
+          <div className="userNameP" onClick={() => userNameRedirect(username)}>
+            {user.username}
+          </div>
         </div>
         <p>{user.email}</p>
         <p>{user.bio}</p>

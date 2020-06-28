@@ -1,17 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import { apiURL } from "../util/apiURL";
 import { AuthContext } from "../providers/AuthContext";
+import axios from "axios";
 
 const TagPosts = () => {
   const API = apiURL();
   const { loading } = useContext(AuthContext);
   const [tagPosts, setTagPosts] = useState([]);
   const { searchValue } = useParams();
-
-  console.log(searchValue);
-
 
   useEffect(() => {
     const getTags = async () => {

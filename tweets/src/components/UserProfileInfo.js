@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
-import axios from "axios";
-import "../css/UserProfileInfo.css";
 import { AuthContext } from "../providers/AuthContext";
 import { apiURL } from "../util/apiURL";
+import axios from "axios";
 import twitterLogo from "../images/Twitter_logo.png";
 import banner from "../images/banner.jpg";
+import "../css/UserProfileInfo.css";
 
 const UserProfileInfo = ({ user }) => {
   const { username, bio, profilePic, email, fullname } = user;

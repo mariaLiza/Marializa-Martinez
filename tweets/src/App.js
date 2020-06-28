@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
+import { AuthRoute, ProtectedRoute } from "./util/routeUtil";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import UserProfile from "./components/UserProfile";
@@ -8,7 +9,7 @@ import Login from "./components/Login";
 import AuthProvider from "./providers/AuthContext";
 import MakeTweet from "./components/MakeTweet";
 import TagPosts from "./components/TagPosts";
-import { AuthRoute, ProtectedRoute } from "./util/routeUtil";
+import WhosWhoDisplay from "./components/WhosWhoDisplay";
 import "./App.css";
 
 function App() {
@@ -35,7 +36,9 @@ function App() {
           <ProtectedRoute path="/tag/:searchValue">
             <TagPosts />
           </ProtectedRoute>
-
+          <ProtectedRoute path="/users/:username">
+            <WhosWhoDisplay />
+          </ProtectedRoute>
           {/* <Route path="*">
           <Error />
         </Route> */}
