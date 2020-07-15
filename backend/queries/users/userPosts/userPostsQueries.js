@@ -30,4 +30,25 @@ const getPostByUser = async (req, res, next) => {
   }
 };
 
-module.exports = getPostByUser;
+const getPostByUsername = async (req, res, next) => {
+  try {
+    const { username } = req.params;
+    let posts = await db.any(
+      `SELECT posts.*, users.*, tags.tag FROM posts LEFT JOIN users ON posts.poster_id = users.id LEFT JOIN tags ON tags.post_id = posts.id WHERE users.username = 'wiggles' ORDER BY created_at DESC`,
+      username
+    );
+    if (posts.length) {
+      res.status(200).json({
+        status: "ok",
+        posts,
+        message: "Retrieved all posts by username",
+      });
+    } else {
+      throw { status: 404, error: `User: ${username} has no posts` };
+    }
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { getPostByUser, getPostByUsername };

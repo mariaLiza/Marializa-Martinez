@@ -21,7 +21,7 @@ const getTagByName = async (req, res, next) => {
   const { tag } = req.params;
   try {
     let posts = await db.any(
-      `SELECT tags.*, posts.*, users.username, users.profile_pic FROM posts LEFT JOIN users ON posts.poster_id = users.id LEFT JOIN tags ON tags.post_id = posts.id ORDER BY created_at DESC`,
+      `SELECT tags.*, posts.*, users.username, users.profile_pic FROM posts LEFT JOIN users ON posts.poster_id = users.id LEFT JOIN tags ON tags.post_id = posts.id WHERE tags.tag = $1 ORDER BY created_at DESC`,
       tag
     );
     if (posts.length) {

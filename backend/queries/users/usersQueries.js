@@ -1,28 +1,5 @@
 const db = require("../../db/index");
 
-// const isUserExisting = async (req, res, next) => {
-//   const getId = req.params.id;
-//   const postId = req.body.poster_id;
-
-//   const id = getId ? getId : postId;
-//   try {
-//     if (!id) {
-//       throw { status: 400, error: "No ID given." };
-//     } else {
-//       let user = await db.one("SELECT * FROM users WHERE id=$1", id);
-//       next();
-//     }
-//   } catch (error) {
-//     if (error.received === 0) {
-//       res
-//         .status(404)
-//         .json({ status: 404, error: `User ID: ${id} doesn't exist` });
-//     } else {
-//       next(error);
-//     }
-//   }
-// };
-
 const getUserById = async (req, res, next) => {
   const { id } = req.params;
   try {
@@ -33,7 +10,22 @@ const getUserById = async (req, res, next) => {
       message: "Retrieved user",
     });
   } catch (error) {
-    console.log(error)
+    console.log(error);
+    next(error);
+  }
+};
+
+const getUserByUsername = async (req, res, next) => {
+  const { username } = req.params;
+  try {
+    let user = await db.any("SELECT users.* FROM users WHERE users.username=$1", username);
+    res.status(200).json({
+      status: "ok",
+      user,
+      message: "Retrieved user",
+    });
+  } catch (error) {
+    console.log(error);
     next(error);
   }
 };
@@ -60,49 +52,27 @@ const createNewUser = async (req, res, next) => {
   }
 };
 
-//may use these queries later on - getAllUsers, logIn, updateUser, deleteUser//
-
-// const getAllUsers = async (req, res, next) => {
-//   try {
-//     let users = await db.any("SELECT * FROM users ORDER BY id ASC");
-//     if (users.length) {
-//       res.status(200).json({
-//         status: "ok",
-//         users,
-//         message: "Retrieved all users",
-//       });
-//     } else {
-//       throw { status: 404, error: "No users found" };
-//     }
-//   } catch (error) {
-//     next(error);
-//   }
-// };
-
-// const logIn = async (req, res, next) => {
-//   const { email } = req.body;
-//   try {
-//     let user = await db.one(`SELECT * FROM users WHERE email=$1`, email);
-//     res.status(200).json({
-//       status: "ok",
-//       user,
-//       message: "Retrieved user by email",
-//     });
-//   } catch (error) {
-//     if (error.received === 0) {
-//       res.status(404).json({
-//         status: 404,
-//         error: `Email doesn't exist`,
-//       });
-//     }
-//     next(error);
-//   }
-// };
+const getAllUsers = async (req, res, next) => {
+  try {
+    let users = await db.any("SELECT * FROM users ORDER BY id ASC");
+    if (users.length) {
+      res.status(200).json({
+        status: "ok",
+        users,
+        message: "Retrieved all users",
+      });
+    } else {
+      throw { status: 404, error: "No users found" };
+    }
+  } catch (error) {
+    next(error);
+  }
+};
 
 const updateUser = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { username, profile_pic } = req.body;
+    const { username, profile_pic, bio } = req.body;
     let user;
 
     if (username) {
@@ -113,8 +83,8 @@ const updateUser = async (req, res, next) => {
     }
     if (profile_pic) {
       user = await db.one(
-        `UPDATE users SET profile_pic=$1 WHERE id=$2 RETURNING *`,
-        [profile_pic, id]
+        `UPDATE users SET profile_pic=$1, bio=$1 WHERE id=$2 RETURNING *`,
+        [profile_pic, id, bio]
       );
     }
     if (user) {
@@ -149,11 +119,10 @@ const updateUser = async (req, res, next) => {
 // };
 
 module.exports = {
-  // isUserExisting,
   getUserById,
   createNewUser,
   //   deleteUser,
-    updateUser,
-  // logIn,
-  // getAllUsers,
+  updateUser,
+  getAllUsers,
+  getUserByUsername
 };

@@ -57,9 +57,9 @@ const UserProfileInfo = ({ user }) => {
               alt="user"
               id="userProfilePic"
             />
-            <button type="submit" id="updateProfileBtn">
+            {/* <button type="submit" id="updateProfileBtn">
               Edit Profile
-            </button>
+            </button> */}
           </div>
 
           <div id="userNames">
