@@ -11,9 +11,9 @@
 
 */
 
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS posts;
 DROP TABLE IF EXISTS tags;
+DROP TABLE IF EXISTS posts;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users
 (
@@ -41,4 +41,6 @@ CREATE TABLE tags
   post_id INTEGER REFERENCES posts(id) ON DELETE CASCADE,
   tag TEXT 
 );
+
+
 
