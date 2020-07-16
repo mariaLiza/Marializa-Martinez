@@ -45,7 +45,7 @@ const WhosPosts = ({ username }) => {
             <p id="dateStampP">{post.created_at}</p>
           </div>
           <p id="postBodyP">{post.body}</p>
-          {post.tags ? <p id="tag">#{post.tags}</p> : <p></p>}
+          {post.tag ? <p id="tag">#{post.tag}</p> : <p></p>}
         </div>
       );
   });

@@ -65,6 +65,8 @@ const WhosWhoDisplay = () => {
   });
   console.log(theUser);
 
+  if (loading) return <div>Loading...</div>;
+
   return (
     <>
       <LeftSideBar />
