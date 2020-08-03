@@ -149,6 +149,14 @@ light blue classic #1da1f2
   text-decoration: none;
 }
 
+@media (max-width: 1199px) {
+  #leftSideTweetBtn {
+    margin: auto;
+    width: minmax(2em, 50%);
+    position: relative;
+  }
+}
+
 #leftSideTweetBtn:hover {
   background-color: #1779b6;
   cursor: pointer;

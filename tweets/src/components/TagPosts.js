@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { apiURL } from "../util/apiURL";
 import { AuthContext } from "../providers/AuthContext";
 import axios from "axios";
+import "../css/TagPosts.css"
 
 const TagPosts = () => {
   const API = apiURL();
@@ -47,8 +48,8 @@ const TagPosts = () => {
 
   if (loading) return <div>Loading...</div>;
   return (
-    <div>
-      <div>{results}</div>
+    <div className="tagPostsDiv">
+      <div className="tagPostsContainer">{results}</div>
     </div>
   );
 };
