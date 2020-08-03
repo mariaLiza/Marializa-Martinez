@@ -27,17 +27,18 @@ const UserProfile = () => {
       console.log(res.data.user);
     };
     fetchUserById();
+    if (loading) return <div>Loading...</div>;
   }, []);
 
   if (loading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="userProfileMainDiv">
       <LeftSideBar />
       <UserProfileInfo user={user} />
       <UserPosts />
       <Footer />
-    </>
+    </div>
   );
 };
 

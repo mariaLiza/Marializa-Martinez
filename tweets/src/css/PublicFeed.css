@@ -7,35 +7,46 @@ dark div color #39434c
 light blue classic #1da1f2
 */
 
+.divHolder {
+  border: 0.5px outset #8899a69a;
+  position: relative;
+}
+
 #exploreH2 {
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
   color: #1da1f2;
   font-size: 16pt;
   font-weight: bold;
   text-align: left;
-  margin-left: 14.1em;
-  height: 10em;
-  width: 100%;
-  padding: 10px 200px 10px 10px;
-  border-right: 1px solid #8899a69a;
-  border-left: 1px solid #8899a69a;
-  background-image: url("https://i0.wp.com/www.time24.news/wp-content/uploads/2020/05/gif-eua.gif?fit=600%2C338&ssl=1");
+  /* background-image: url("https://i0.wp.com/www.time24.news/wp-content/uploads/2020/05/gif-eua.gif?fit=600%2C338&ssl=1"); */
+}
+
+.exploreTwitter {
+  border: 1px solid #8899a69a;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4em;
+  padding: 1em;
+}
+
+.twitterFeed {
+  margin: auto;
+  background-color: transparent;
 }
 
 .publicPostsListDiv {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+  justify-content: stretch;
+  width: 48%;
+
   text-align: left;
-  margin-left: 84%;
-  justify-content: space-between;
-  border-top: 1px outset #8899a6;
+  margin: auto;
+  /* border-top: 1px outset #8899a6;
   border-right: 1px solid #8899a69a;
   border-left: 0.5px solid #8899a69a;
-  width: 100%;
-  height: max-content;
-  padding: 25px 140px 25px 70px;
+  border-bottom: 0.5px solid #8899a69a; */
 }
 
 #exploreH2:hover {
@@ -55,8 +66,11 @@ light blue classic #1da1f2
 
 .rowContainerPublic {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  align-content: left;
+  width: 100%;
+  border: 1px outset #8899a69a;
 }
 
 .rowContainerPublic > p {

@@ -25,12 +25,13 @@ const HomeFeed = () => {
       }
     };
     showAllPosts();
+    if (loading) return <div>Loading...</div>;
   }, []);
 
   let feedList = feed.map((post, i) => {
     return (
-      <div key={i} className="allPostsListDiv">
-        <div className="rowContainerHomeFeed">
+      <div key={i} className="userPostsListDiv">
+        <div className="rowContainer">
           <p id="picP">
             {" "}
             <img
@@ -45,7 +46,7 @@ const HomeFeed = () => {
           <p id="dateStampP">{post.created_at}</p>
         </div>
         <p id="allPostBodyP">{post.body}</p>
-        { post.tag ? <p id="tag">#{post.tag}</p> : <p></p>}
+        {post.tag ? <p id="tag">#{post.tag}</p> : <p></p>}
       </div>
     );
   });
@@ -53,12 +54,13 @@ const HomeFeed = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <>
-      <div>
-        <div id="exploreH1">Explore <p id="happeningP">Happening Right Now</p></div>
-        <div> {feedList}</div>
+    <div className="publicPostsListDiv">
+      <div className="exploreTwitter">
+        <h2 id="exploreH2">Explore</h2>
+        <p id="publicHappeningNow">Happening Right Now</p>
       </div>
-    </>
+      <div className="divHolder">{feedList}</div>
+    </div>
   );
 };
 

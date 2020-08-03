@@ -1,9 +1,6 @@
-#mainHomeDiv {
-  display: grid;
-  grid-template-columns: 25% 50% 25%;
-  justify-content: space-evenly;
-  width: 100%;
-  height: auto;
-  
-}
+.mainHomeDiv {
 
+  display: flex;
+  flex-direction: row-reverse;
+ /* position: static; */
+}

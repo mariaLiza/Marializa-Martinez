@@ -10,21 +10,18 @@ light blue classic #1da1f2
 #userH1 {
   display: flex;
   font-size: larger;
-  justify-self: start;
   padding: 15px 5px 5px 10px;
   position: relative;
 }
 
-#divUserInfo {
+.userInfoDiv {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   margin: auto;
-  margin-left: 26.1%;
-  border-right: outset 0.5px #8899a6c0;
-  width: 39.6%;
+  border: solid 1px #8899a6c0;
+  width: 48%;
   height: auto;
-  padding: 1px;
+  position: relative;
 }
 
 #divUserInfo:hover {

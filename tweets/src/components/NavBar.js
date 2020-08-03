@@ -60,7 +60,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav>
+      <nav className="navBar">
         <NavLink exact to="/">
           <img id="home" src={whiteBird} alt="home" />
         </NavLink>

@@ -6,37 +6,28 @@ dark div color #39434c
 light blue classic #1da1f2
 */
 
-/*
-//icons in order:
-#birdHouse
-#hash
-#bell
-#mail
-#bookMark
-#listIcon
-#userProfile
-#moreCircle
-*/
 
 #leftSideDiv {
-  width: 21.2%;
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-  border-right: 0.5px solid #8899a69a;
-  text-align: left;
-  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  left: 0;
+  width: 26%;
+  height: 100vh;
   position: fixed;
-  padding-right: 5%;
+  border-right: 1px outset #8899a6;
+  margin-top: 5em;
 }
 
 #leftNav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   border: none;
   text-align: left;
   cursor: pointer;
-  position: static;
-  height: auto;
-  
+  position: sticky;
+  height: min-content;
+  justify-content: space-evenly;
+  padding: 1em 5em;
 }
 
 #leftNav > li {
@@ -45,11 +36,6 @@ light blue classic #1da1f2
 
 #leftNav > li:hover {
   color: #1da1f2;
-}
-
-#leftSideIcons {
-  margin-left: 25%;
-  
 }
 
 #birdHouse {
@@ -148,9 +134,7 @@ light blue classic #1da1f2
 
 #leftSideTweetBtn {
   display: flex;
-  margin: auto;
-  margin-left: 30%;
-  /* margin-right: 5%; */
+  margin: 5em;
   background-color: #1da1f2;
   color: whitesmoke;
   width: 60%;
@@ -169,7 +153,6 @@ light blue classic #1da1f2
   background-color: #1779b6;
   cursor: pointer;
   text-decoration: none;
-  /* color: inherit; */
 }
 
 #leftSideTweetBtn:active {
@@ -178,7 +161,6 @@ light blue classic #1da1f2
   position: relative;
   top: 1px;
   text-decoration: none;
-  /* color: inherit; */
 }
 
 #leftSideTweetBtn:focus {

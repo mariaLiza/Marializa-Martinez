@@ -18,48 +18,47 @@ const PublicFeed = () => {
           url: `${API}/api/posts`,
         });
         setPublicFeed(res.data.postsAll);
-        // debugger;
       } catch (err) {
         console.log(err);
       }
     };
     showAllPosts();
+    if (loading) return <div>Loading...</div>;
   }, []);
 
   let publicFeedList = publicFeed.map((post, i) => {
+    if (loading) return <div>Loading...</div>;
     return (
-      <div key={i} className="publicPostsListDiv">
-        <div className="rowContainerPublic">
-          <p id="picP">
-            {" "}
-            <img
-              id="postPublicProfPic"
-              src={
-                "https://ya-webdesign.com/transparent250_/blank-profile-picture-png-2.png"
-              }
-              alt="profile image"
-            />
-          </p>
-          <p id="userNamePublicP">@{post.username}</p>
-          <p id="dateStampPublicP">{post.created_at}</p>
+      <div key={i} className="userPostsListDiv">
+      <div className="rowContainer">
+        <p id="picP">
+          {" "}
+          <img
+            id="postPublicProfPic"
+            src={
+              "https://ya-webdesign.com/transparent250_/blank-profile-picture-png-2.png"
+            }
+            alt="profile image"
+          />
+        </p>
+        <p id="userNamePublicP">@{post.username}</p>
+        <p id="dateStampPublicP">{post.created_at}</p>
         </div>
         <p id="allPostBodyPublicP">{post.body}</p>
-       { post.tag ? <p id="tag">#{post.tag}</p> : <p></p>}
+        {post.tag ? <p id="tag">#{post.tag}</p> : <p></p>}
       </div>
     );
   });
 
-  if (loading) return <div>Loading...</div>;
-
   return (
-    <>
-      <div>
-        <div id="exploreH2">
-          Explore <p id="publicHappeningNow">Happning Right Now</p>
-        </div>
-        <div className="publicFeedDiv">{publicFeedList}</div>
+    <div className="publicPostsListDiv">
+      <div className="exploreTwitter">
+        <h2 id="exploreH2">Explore</h2>
+        <p id="publicHappeningNow">Happening Right Now</p>
       </div>
-    </>
+      <div className="divHolder">{publicFeedList}</div>
+      
+    </div>
   );
 };
 

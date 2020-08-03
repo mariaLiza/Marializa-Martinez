@@ -7,10 +7,6 @@ dark div color #39434c
 light blue classic #1da1f2
 */
 
-/* #homeFeedContainerDiv {
-    display: grid;
-    grid-template-rows: 25% 75%;
-} */
 
 #exploreH1 {
   cursor: pointer;
@@ -22,10 +18,10 @@ light blue classic #1da1f2
   font-weight: bold;
   margin-left: 17.8em;
   height: 12em;
-  width: 100%;
+  width: auto;
   padding: 10px 199px 0px 10px;
   border-right: 0.5px solid #8899a69a;
-  background-image: url("https://i0.wp.com/www.time24.news/wp-content/uploads/2020/05/gif-eua.gif?fit=600%2C338&ssl=1");
+
 }
 
 #exploreH1:hover {
@@ -40,17 +36,12 @@ light blue classic #1da1f2
 }
 
 
-.allPostsListDiv {
+.PostsListDiv {
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-left: 105%;
   justify-content: space-between;
-  border-right: 0.5px solid #8899a69a;
-  border-top: 1px outset #8899a6;
-  width: 100%;
-  height: max-content;
-  padding: 25px 140px 25px 70px;
+  width: auto;
 }
 
 .allPostsListDiv:hover {

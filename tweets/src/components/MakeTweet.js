@@ -50,7 +50,6 @@ const MakeTweets = () => {
       const formData = new FormData();
       // formData.append("myImage", file);
       formData.append("poster_id", userId);
-      // console.log(currentUser.uid, "current");
       formData.append("body", body.value);
       formData.append("created_at", new Date().toString());
 
@@ -61,27 +60,20 @@ const MakeTweets = () => {
       };
       let res = await axios.post(`${API}/api/posts`, formData, config);
       setNewPost(res);
-      // let idPost = parseInt(res.data.newPost.id)
+     
 
       let postId = res.data.newPost.id;
 
       let tags = tagOne.value;
-      console.log(tags, "tags");
 
       let tagsRes = await axios.post(`${API}/api/tags`, {
         post_id: parseInt(postId),
         tags,
       });
-      // setNewTag(tagsRes);
+     
       console.log(tagOne.value, "tag1val");
       console.log(postId, "postid");
       console.log(tagsRes, "tagsRes");
-      // debugger;
-      // } catch (err) {
-      //   console.log(err);
-      // }
-      // };
-      // postTag();
 
       history.push("/profile");
     } catch (err) {

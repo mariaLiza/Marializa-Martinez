@@ -21,29 +21,12 @@ const LeftSideBar = () => {
                 <img id="birdHouse" src={birdhouse} alt="home" />
               </NavLink>
             </li>
-            {/* <li>
-              <img id="hash" src={hashtag} alt="explore" />
-            </li>
-            <li>
-              <img id="bell" src={bell} alt="notifications" />
-            </li>
-            <li>
-              <img id="mail" src={email} alt="messages" />
-            </li>
-            <li>
-              <img id="bookMark" src={bookmark} alt="bookmarks" />
-            </li>
-            <li>
-              <img id="listIcon" src={lists} alt="lists" />
-            </li> */}
+
             <li>
               <NavLink className="link" exact to="/profile">
                 <img id="userProfile" src={profile} alt="profile" />
               </NavLink>
             </li>
-            {/* <li>
-              <img id="moreCircle" src={morecircle} alt="more" />
-            </li> */}
           </ul>
           <ul id="leftSideText">
             <li>
@@ -51,25 +34,17 @@ const LeftSideBar = () => {
                 <p id="leftHomeText">Home</p>
               </NavLink>
             </li>
-            {/* <li>Explore</li>
-            <li>Notifications</li>
-            <li>Messages</li>
-            <li>Bookmarks</li>
-            <li>Lists</li> */}
+
             <li>
               <NavLink className="link" exact to="/profile">
                 <p id="leftProfileText">Profile</p>
               </NavLink>
             </li>
-            {/* <li>More</li> */}
-          </ul>
+          </ul>{" "}
         </nav>
-        <div>
-          {" "}
           <NavLink exact to="/maketweet">
             <p id="leftSideTweetBtn">Tweet</p>
           </NavLink>
-        </div>
       </div>
     </>
   );

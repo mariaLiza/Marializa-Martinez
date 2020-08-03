@@ -1,18 +1,14 @@
 #footerUl {
   display: flex;
-  flex-wrap: wrap;
-  float: right;
+  align-self: start;
+  right: 0;
   color: #8899a6;
-  justify-content: baseline;
-  justify-self: stretch;
   text-align: center;
   position: fixed;
-  bottom: 0;
   right: 0;
-  padding-bottom: 1em;
-  padding-right: 100px;
-  width: 25%;
+  padding: 1em;
   font-size: 10pt;
+  
 }
 
 li {
@@ -37,4 +33,30 @@ li:active {
 .atags:active {
   text-decoration: underline;
   color: #1da1f2;
+}
+
+
+@media (max-width: 576px) {
+  #footerUl {
+    display: flex;
+    flex-direction: row;
+    max-width: 540px;
+  }
+}
+@media (max-width: 768px) {
+  #footerUl {
+    display: flex;
+    flex-direction: row;
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  #footerUl {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  #footerUl {
+    max-width: 1140px;
+  }
 }

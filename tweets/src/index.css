@@ -48,6 +48,12 @@ table {
 	border-spacing: 0;
 }
 
+.SandboxRoot.env-bp-min .timeline-Tweet {
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
 /* body {
     -ms-overflow-style: scrollbar;
     overflow-y: scroll;

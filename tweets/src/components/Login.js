@@ -24,14 +24,14 @@ const Login = () => {
   };
 
   return (
-    <>
+    
       <div id="logInDiv">
         {error ? <div>{error}</div> : null}
-        <NavLink exact to="/">
-          <img id="bird" src={whiteBird} alt="home" />
+        <NavLink exact to="/" className="bird" >
+          <img id="birdLogo" src={whiteBird} alt="home" />
         </NavLink>
-        <h1 id="title">Log in to Twitter</h1>
         <form className="lForm" id="lFormInp" onSubmit={handleSubmit}>
+        <h1 id="title">Log in to Twitter</h1>
           <label id="email">Email</label>
           <input
             className="input"
@@ -54,7 +54,7 @@ const Login = () => {
           </NavLink>
         </form>
       </div>
-    </>
+    
   );
 };
 

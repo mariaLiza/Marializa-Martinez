@@ -10,6 +10,7 @@ import AuthProvider from "./providers/AuthContext";
 import MakeTweet from "./components/MakeTweet";
 import TagPosts from "./components/TagPosts";
 import WhosWhoDisplay from "./components/WhosWhoDisplay";
+// import Footer from "./components/Footer.js"
 import "./App.css";
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
           <Error />
         </Route> */}
         </Switch>
+        {/* <Footer /> */}
       </AuthProvider>
     </div>
   );

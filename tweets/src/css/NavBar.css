@@ -2,15 +2,15 @@
   opacity: 1;
 } */
 
-nav {
+.navBar {
   display: flex;
   padding: 10px;
   justify-content: space-evenly;
   border-bottom: 1px solid #8899a6;
   height: 2.5em;
   text-align: center;
-  width: 101%;
-  position: sticky;
+  width: 100vw;
+  position: fixed;
   top: 0;
   background-color: #15202b;
   opacity: 1;

@@ -4,7 +4,6 @@ import RightSideBar from "./RightSideBar";
 import LeftSideBar from "./LeftSideBar";
 import HomeFeed from "./HomeFeed";
 import PublicFeed from "./PublicFeed";
-import Footer from "./Footer";
 import WhosWho from "./WhosWho";
 import "../css/Home.css";
 
@@ -30,16 +29,18 @@ const Home = () => {
     }
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <>
-      <div id="mainHomeDiv">
-        {displaySideBar()}
-
-        <Footer />
-      </div>
-    </>
+    <div className="mainHomeDiv">
+      {/* <div className="exploreTwitter">
+        <h2 id="exploreH2">Explore</h2>
+        <p id="publicHappeningNow">Happening Right Now</p>
+      </div> */}
+      {displaySideBar()}
+    </div>
   );
 };
 

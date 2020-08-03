@@ -60,7 +60,7 @@ const UserPosts = () => {
   return (
     <>
       <div id="userPostsDiv">
-        <h1 id="userTweetsH1">Tweets</h1>
+        
         <div>{userPostList}</div>
       </div>
     </>

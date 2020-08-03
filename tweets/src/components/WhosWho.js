@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { AuthContext } from "../providers/AuthContext";
 import { apiURL } from "../util/apiURL";
 import axios from "axios";
+import Footer from "./Footer";
 import "../css/WhosWho.css";
 
 const WhosWho = () => {
@@ -61,12 +62,13 @@ const WhosWho = () => {
   console.log(users);
 
   return (
-    <>
+    
       <div className="whosContainer">
         <h1 className="whoH1">Who's Who</h1>
         {usersDisplay}
+      <Footer />
       </div>
-    </>
+    
   );
 };
 

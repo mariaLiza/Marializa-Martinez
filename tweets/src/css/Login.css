@@ -4,7 +4,13 @@ dark div color #39434c
 light blue classic #1da1f2
 */
 
-#bird {
+.bird {
+  width: auto;
+  height: 10px;
+  margin: auto;
+}
+
+#birdLogo {
   width: 4em;
   height: auto;
 }
@@ -12,29 +18,25 @@ light blue classic #1da1f2
 #title {
   display: flex;
   justify-content: space-around;
-  margin: auto;
   font-size: x-large;
-  padding: 10px;
+  padding: 1em;
 }
 
 #logInDiv {
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   margin: auto;
-  margin-top: 10px;
-  align-items: stretch;
+  align-self: start;
   border: 0 solid black;
-    box-sizing: border-box;
-  display: flex;
-  flex-basis: auto;
-  flex-direction: column;
-  flex-shrink: 0;
+  height: 100vh;
+  width: 100vw;
 }
 
 .lForm {
   display: flex;
   flex-direction: column;
   width: 40%;
-  padding: 5px;
+  height: 100%;
   margin: auto;
 }
 
@@ -60,7 +62,8 @@ label {
 
 #logInbtn {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   background-color: #1da1f2;
   border-radius: 25px;
   border-color: #39434c;
@@ -80,9 +83,9 @@ label {
 }
 
 #suft {
-    text-decoration: none;
-    color: #1da0f2e1;
-    padding: 25px;
-    font-size: 1em;
-    font-weight: lighter;
+  text-decoration: none;
+  color: #1da0f2e1;
+  padding: 25px;
+  font-size: 1em;
+  font-weight: lighter;
 }

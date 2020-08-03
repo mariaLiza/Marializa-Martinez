@@ -6,15 +6,13 @@ light blue classic #1da1f2
 
 .sbDiv {
   display: flex;
-  float: right;
+  right: 0;
   border-radius: 10px;
   border: 0.5px solid #8899a69a;
   height: max-content;
-  width: 18em;
-  margin-top: 10px;
-  margin-left: 67.5%;
-  margin-right: 15%;
-  margin-bottom: 10px;
+  width: 22%;
+  margin: 10px;
+  margin-top: 5em;
   padding: 10px;
   position: fixed;
 }
