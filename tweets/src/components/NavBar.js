@@ -31,7 +31,7 @@ const NavBar = () => {
               {...search}
               id="searchInput"
               type="search"
-              placeholder="Search Twitter by hashtag"
+              placeholder="Search by hashtag"
             />
           </form>
           <a id="logout" onClick={logout}>

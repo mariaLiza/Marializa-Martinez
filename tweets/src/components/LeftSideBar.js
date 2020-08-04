@@ -3,12 +3,6 @@ import { NavLink } from "react-router-dom";
 import "../css/LeftSideBar.css";
 import birdhouse from "../images/sidebarIcons/birdhouse white.png";
 import profile from "../images/sidebarIcons/profile white.png";
-import bell from "../images/sidebarIcons/bell-2-xl.png";
-import bookmark from "../images/sidebarIcons/bookmark-5-xl.png";
-import email from "../images/sidebarIcons/email-12-xl.png";
-import hashtag from "../images/sidebarIcons/hashtag white.png";
-import lists from "../images/sidebarIcons/lists.png";
-import morecircle from "../images/sidebarIcons/morecircle white.png";
 
 const LeftSideBar = () => {
   return (

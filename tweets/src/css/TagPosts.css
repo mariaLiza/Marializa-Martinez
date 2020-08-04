@@ -1,13 +1,22 @@
 .tagPostsDiv {
-    height: 100vh;
-    width: 100vw;
-    margin-top: 2em;
-    position: relative;
-    overflow-y: scroll;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 2em;
+  position: relative;
+  overflow-y: scroll;
 }
 
 .tagPostsContainer {
-    margin: auto;
-    width: 48%;
-    height: auto;
+  margin: auto;
+  width: 48%;
+  height: auto;
+}
+
+@media (max-width: 960px) {
+  .tagPostsContainer {
+    display: flex;
+    flex-direction: column;
+    width: fill;
+    position: relative;
+  }
 }
