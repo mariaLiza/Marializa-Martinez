@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthContext";
 import RightSideBar from "./RightSideBar";
 import LeftSideBar from "./LeftSideBar";
@@ -36,10 +35,8 @@ const Home = () => {
 
   return (
     <div className="mainHomeDiv">
-      <NavLink exact to="/maketweet">
-        <p id="leftSideTweetBtn">Tweet</p>
-      </NavLink>
       {displaySideBar()}
+   
     </div>
   );
 };

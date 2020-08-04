@@ -7,7 +7,6 @@ dark div color #39434c
 light blue classic #1da1f2
 */
 
-
 #exploreH1 {
   cursor: pointer;
   display: flex;
@@ -21,7 +20,6 @@ light blue classic #1da1f2
   width: auto;
   padding: 10px 199px 0px 10px;
   border-right: 0.5px solid #8899a69a;
-
 }
 
 #exploreH1:hover {
@@ -35,6 +33,46 @@ light blue classic #1da1f2
   color: rgba(245, 245, 245, 0.856);
 }
 
+.tweetButton {
+  display: flex;
+  margin: auto;
+  margin-top: 5em;
+  background-color: #1da1f2;
+  color: whitesmoke;
+  width: 30%;
+  height: auto;
+  padding: 20px;
+  text-align: center;
+  font-size: 12pt;
+  font-weight: bolder;
+  justify-content: center;
+  border-radius: 30px;
+  border: none;
+  text-decoration: none;
+}
+
+@media (max-width: 1355px) {
+  .tweetButton {
+    display: flex;
+    justify-content: center;
+  align-content: flex-start;
+    margin-top: 0;
+    margin-bottom: 1em;
+    width: 10%;
+    position: relative;
+  }
+}
+
+@media (max-width: 300px) {
+  .tweetButton {
+    display: flex;
+    justify-content: center;
+    margin-right: 14em;
+    margin-top: 0;
+    width: 10%;
+    position: relative;
+  }
+}
 
 .PostsListDiv {
   display: flex;

@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { apiURL } from "../util/apiURL";
 import { AuthContext } from "../providers/AuthContext";
-import profilePic from "../images/sidebarIcons/profile white.png";
-// import MakeTweet from "../components/MakeTweet";
 import "../css/HomeFeed.css";
 
 const HomeFeed = () => {
@@ -19,7 +18,6 @@ const HomeFeed = () => {
           url: `${API}/api/posts`,
         });
         setFeed(res.data.postsAll);
-        // debugger
       } catch (err) {
         console.log(err);
       }
@@ -56,6 +54,9 @@ const HomeFeed = () => {
   return (
     <div className="publicPostsListDiv">
       <div className="exploreTwitter">
+      <NavLink exact to="/maketweet">
+        <p className="tweetButton">Tweet</p>
+      </NavLink>
         <h2 id="exploreH2">Explore</h2>
         <p id="publicHappeningNow">Happening Right Now</p>
       </div>

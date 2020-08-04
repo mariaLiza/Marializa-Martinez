@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthContext";
 import { apiURL } from "../util/apiURL";
-
-import axios from "axios";
 import twitterLogo from "../images/Twitter_logo.png";
 import banner from "../images/banner.jpg";
 import "../css/UserProfileInfo.css";
@@ -40,6 +39,9 @@ const UserProfileInfo = ({ user }) => {
           </div>
 
           <p id="bioP">Bio: {bio}</p>
+          <NavLink exact to="/maketweet">
+            <p className="tweetButton">Tweet</p>
+          </NavLink>
         </div>
         <h1 id="userTweetsH1">Tweets</h1>
       </div>
