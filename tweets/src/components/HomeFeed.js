@@ -26,6 +26,12 @@ const HomeFeed = () => {
     if (loading) return <div>Loading...</div>;
   }, []);
 
+  const fixDate = (number) => {
+    const stringDate = number.toString();
+    let newDate = new Date(stringDate);
+    return newDate.toDateString();
+  };
+
   let feedList = feed.map((post, i) => {
     return (
       <div key={i} className="userPostsListDiv">
@@ -41,7 +47,7 @@ const HomeFeed = () => {
             />
           </p>
           <p id="userNameP">@{post.username}</p>
-          <p id="dateStampP">{post.created_at}</p>
+          <p id="dateStampP">{fixDate(post.created_at)}</p>
         </div>
         <p id="allPostBodyP">{post.body}</p>
         {post.tag ? <p id="tag">#{post.tag}</p> : <p></p>}

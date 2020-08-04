@@ -26,6 +26,12 @@ const PublicFeed = () => {
     if (loading) return <div>Loading...</div>;
   }, []);
 
+  const fixDate = (number) => {
+    const stringDate = number.toString();
+    let newDate = new Date(stringDate);
+    return newDate.toDateString();
+  };
+
   let publicFeedList = publicFeed.map((post, i) => {
     if (loading) return <div>Loading...</div>;
     return (
@@ -42,7 +48,7 @@ const PublicFeed = () => {
           />
         </p>
         <p id="userNamePublicP">@{post.username}</p>
-        <p id="dateStampPublicP">{post.created_at}</p>
+        <p id="dateStampPublicP">{fixDate(post.created_at)}</p>
         </div>
         <p id="allPostBodyPublicP">{post.body}</p>
         {post.tag ? <p id="tag">#{post.tag}</p> : <p></p>}

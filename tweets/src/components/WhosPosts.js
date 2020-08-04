@@ -25,6 +25,12 @@ const WhosPosts = ({ username }) => {
     getUserPosts();
   }, [username]);
 
+  const fixDate = (number) => {
+    const stringDate = number.toString();
+    let newDate = new Date(stringDate);
+    return newDate.toDateString();
+  };
+
   let usersPostList = usersPosts.map((post, i) => {
     if (username === post.username)
       return (
@@ -41,7 +47,7 @@ const WhosPosts = ({ username }) => {
               />
             </p>
             <p id="userNameP">@{post.username}</p>
-            <p id="dateStampP">{post.created_at}</p>
+            <p id="dateStampP">{fixDate(post.created_at)}</p>
           </div>
           <p id="postBodyP">{post.body}</p>
           {post.tag ? <p id="tag">#{post.tag}</p> : <p></p>}

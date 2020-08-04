@@ -23,6 +23,12 @@ const TagPosts = () => {
     getTags();
   }, []);
 
+  const fixDate = (number) => {
+    const stringDate = number.toString();
+    let newDate = new Date(stringDate);
+    return newDate.toDateString();
+  };
+
   const results = tagPosts.map((post, i) => {
     return (
       <div key={i} className="userPostsListDiv">
@@ -38,7 +44,7 @@ const TagPosts = () => {
             />
           </p>
           <p id="userNameP">@{post.username}</p>
-          <p id="dateStampP">{post.created_at}</p>
+          <p id="dateStampP">{fixDate(post.created_at)}</p>
         </div>
         <p id="postBodyP">{post.body}</p>
         <p id="tag">#{post.tag}</p>
