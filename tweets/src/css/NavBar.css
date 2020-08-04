@@ -17,6 +17,15 @@
   z-index: 5;
 }
 
+@media (max-width: 1355px) {
+  .navBar {
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+    padding: 3px;
+  }
+}
+
 #home {
   width: 3em;
   height: auto;
@@ -110,6 +119,13 @@
   border-radius: 100%;
 }
 
+@media (max-width: 1355px) {
+  #profilePic {
+    display: none;
+    position: relative;
+  }
+}
+
 #profile {
   text-decoration: none;
   color: whitesmoke;
@@ -120,7 +136,17 @@
 #searchForm {
   display: flex;
   flex-direction: row;
+  width: auto;
 }
+
+@media (max-width: 1355px) {
+  #searchForm {
+    display: flex;
+    position: relative;
+    padding: 0;
+  }
+}
+
 #searchIcon {
   padding-top: 12px;
   padding-right: 10px;
@@ -128,9 +154,16 @@
   height: 1.5em;
 }
 
+@media (max-width: 1355px) {
+  #searchIcon {
+    display: none;
+    position: relative;
+  }
+}
+
 #searchInput {
   display: flex;
-  width: 25em;
+  width: 65%;
   height: 2em;
   margin-top: 7px;
   padding: 10px;
@@ -139,6 +172,14 @@
   background-color: #253341;
   border: none;
   font-size: 1em;
+}
+
+@media (max-width: 1355px) {
+  #searchInput {
+    display: flex;
+    padding: 0;
+    text-align-last: center;
+  }
 }
 
 input::placeholder {

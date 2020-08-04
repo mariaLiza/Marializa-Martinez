@@ -1,8 +1,9 @@
 .tagPostsDiv {
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     margin-top: 2em;
     position: relative;
+    overflow-y: scroll;
 }
 
 .tagPostsContainer {

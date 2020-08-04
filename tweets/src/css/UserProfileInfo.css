@@ -24,6 +24,19 @@ light blue classic #1da1f2
   position: relative;
 }
 
+@media (max-width: 1355px) {
+  .userInfoDiv {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: auto;
+    place-items: center;
+    justify-content: space-around;
+    width: fill;
+    position: static;
+  }
+}
+
 #divUserInfo:hover {
   background-color: #192734;
 }

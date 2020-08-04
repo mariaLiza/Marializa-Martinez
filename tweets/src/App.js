@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import React from "react";
+import { Route, Switch } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "./util/routeUtil";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
@@ -10,7 +10,6 @@ import AuthProvider from "./providers/AuthContext";
 import MakeTweet from "./components/MakeTweet";
 import TagPosts from "./components/TagPosts";
 import WhosWhoDisplay from "./components/WhosWhoDisplay";
-// import Footer from "./components/Footer.js"
 import "./App.css";
 
 function App() {
@@ -44,7 +43,6 @@ function App() {
           <Error />
         </Route> */}
         </Switch>
-        {/* <Footer /> */}
       </AuthProvider>
     </div>
   );

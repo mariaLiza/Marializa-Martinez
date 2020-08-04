@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../providers/AuthContext";
 import { apiURL } from "../util/apiURL";
 import axios from "axios";
-// import profilePic from "../images/sidebarIcons/profile white.png";
 import "../css/UserPosts.css";
 
 const WhosPosts = ({ username }) => {

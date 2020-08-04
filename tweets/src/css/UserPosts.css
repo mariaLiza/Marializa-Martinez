@@ -15,7 +15,7 @@ light blue classic #1da1f2
   font-weight: bold;
   padding: 20px 76px 20px 20px;
   border: 1px solid #8899a6c0;
-
+  width: fill;
 }
 
 #userPostsDiv {
@@ -33,9 +33,34 @@ light blue classic #1da1f2
   flex-direction: column;
   text-align: left;
   justify-content: flex-start;
-  
   height: min-content;
   padding: 48px 48px 100px 48px;
+}
+
+@media (max-width: 1355px) {
+  #userPostsDiv {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: auto;
+    place-items: center;
+    width: fill;
+    height: 100%;
+    position: relative;
+    overflow-y: scroll;
+  }
+}
+
+@media (max-width: 1355px) {
+  .userPostsListDiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: initial;
+    width: auto;
+    text-align: left;
+    padding: 1em 8em 1em 1em;
+    position: relative;
+  }
 }
 
 .userPostsListDiv:hover {

@@ -18,6 +18,14 @@ light blue classic #1da1f2
   margin-top: 5em;
 }
 
+@media (max-width: 1160px) {
+  #leftSideDiv {
+    display: none;
+    position: relative;
+  }
+}
+
+
 #leftNav {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -149,13 +157,13 @@ light blue classic #1da1f2
   text-decoration: none;
 }
 
-@media (max-width: 1199px) {
+/* @media (max-width: 1355px) {
   #leftSideTweetBtn {
     margin: auto;
     width: minmax(2em, 50%);
     position: relative;
   }
-}
+} */
 
 #leftSideTweetBtn:hover {
   background-color: #1779b6;

@@ -8,6 +8,7 @@ import banner from "../images/banner.jpg";
 import WhosPosts from "./WhosPosts";
 import LeftSideBar from "./LeftSideBar";
 import Footer from "./Footer";
+import "../css/WhosWhoDisplay.css";
 
 const WhosWhoDisplay = () => {
   const [thisUser, setThisUser] = useState({});
@@ -68,12 +69,12 @@ const WhosWhoDisplay = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="whosProfileDiv">
       <LeftSideBar />
       {theUser}
       <WhosPosts username={username} />
       <Footer />
-    </>
+    </div>
   );
 };
 

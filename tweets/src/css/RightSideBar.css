@@ -17,6 +17,13 @@ light blue classic #1da1f2
   position: fixed;
 }
 
+@media (max-width: 960px) {
+  .sbDiv {
+    display: none;
+    position: relative;
+  }
+}
+
 .sideBarForm {
   display: flex;
   flex-direction: column;
