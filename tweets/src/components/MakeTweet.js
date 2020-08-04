@@ -16,12 +16,10 @@ const MakeTweets = () => {
   const API = apiURL();
   const body = useInput("");
   const tagOne = useInput("");
-  // const [postId, setPostId] = useState("");
   const [userId, setUserId] = useState("");
   const [newPost, setNewPost] = useState("");
   const [newTag, setNewTag] = useState("");
   const history = useHistory();
-  
 
   useEffect(() => {
     const getUser = async () => {
@@ -34,7 +32,6 @@ const MakeTweets = () => {
           },
         });
         setUserId(res.data.user.id);
-        // debugger;
       } catch (err) {
         console.log(err);
       }
@@ -60,7 +57,6 @@ const MakeTweets = () => {
       };
       let res = await axios.post(`${API}/api/posts`, formData, config);
       setNewPost(res);
-     
 
       let postId = res.data.newPost.id;
 
@@ -70,7 +66,7 @@ const MakeTweets = () => {
         post_id: parseInt(postId),
         tags,
       });
-     
+
       console.log(tagOne.value, "tag1val");
       console.log(postId, "postid");
       console.log(tagsRes, "tagsRes");
@@ -81,21 +77,17 @@ const MakeTweets = () => {
     }
   };
 
-  // const onChange = (e) => {
-  //   setFile(e.target.files[0]);
-  // };
-
   return (
-    <>
+    <div className="makeTweetMain">
       <div id="divMakeTweet" className="makeTweetDiv">
-        <NavLink exact to="/profile">
-          <p id="xOut">x</p>
-        </NavLink>
         <form
           onSubmit={handleSubmit}
           id="formMakeTweet"
           className="makeTweetForm"
         >
+        <NavLink exact to="/profile" className="xContainer">
+          <p id="xOut">x</p>
+        </NavLink>
           <div id="formDiv">
             <img
               id="makeTweetProfilePic"
@@ -104,12 +96,6 @@ const MakeTweets = () => {
               }
               alt="profile image"
             />
-            {/* <img
-              id="makeTweetProfilePic"
-              src={profilePic}
-              alt="profile image"
-            /> */}
-            {/* <label id="makeTweetLabel">What's happening?</label> */}
           </div>
 
           <textarea
@@ -121,21 +107,6 @@ const MakeTweets = () => {
             type="text"
           ></textarea>
           <div className="makeTweetIcons">
-            <ul className="iconListMT">
-              <li>
-                <img src={barChart} alt="chart" />
-              </li>
-              <li>
-                <img src={emoticon} alt="emoticon" />
-              </li>
-              <li>
-                <img src={gifInsert} alt="gif" />
-              </li>
-              <li>
-                {/* <input type="file" name="myImage" onChange={onChange} /> */}
-                <img src={imgInsert} alt="img" />
-              </li>
-            </ul>
             <label id="tagLabel">
               Enter a hashtag for your post
               <input id="tagInp" type="text" placeholder="#" {...tagOne} />
@@ -146,7 +117,7 @@ const MakeTweets = () => {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

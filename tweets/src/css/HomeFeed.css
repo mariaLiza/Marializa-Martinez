@@ -34,7 +34,7 @@ light blue classic #1da1f2
 }
 
 .tweetButton {
-  display: flex;
+  display: none;
   margin: auto;
   margin-top: 5em;
   background-color: #1da1f2;
@@ -49,13 +49,14 @@ light blue classic #1da1f2
   border-radius: 30px;
   border: none;
   text-decoration: none;
+  position: relative;
 }
 
 @media (max-width: 1355px) {
   .tweetButton {
     display: flex;
     justify-content: center;
-  align-content: flex-start;
+    align-content: flex-start;
     margin-top: 0;
     margin-bottom: 1em;
     width: 10%;

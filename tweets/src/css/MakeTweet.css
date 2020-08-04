@@ -4,17 +4,37 @@ dark div color #39434c
 light blue classic #1da1f2
 */
 
+.makeTweetMain {
+  display: flex;
+  margin: auto;
+  margin-top: 2em;
+  width: 100vw;
+  height: 100vh;
+}
+
+@media (max-width: 960px) {
+  #divMakeTweet {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    margin: auto;
+    justify-content: flex-start;
+    height: auto;
+    width: fill;
+    position: relative;
+    background-color: transparent;
+  }
+}
+
 #divMakeTweet {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
   margin-left: auto;
   margin-right: auto;
   margin-top: 5%;
-  width: 40%;
-  height: auto;
+  width: 50%;
+  height: max-content;
   background-color: #192734;
-  /* padding: 20px; */
   border-radius: 10px;
 }
 
@@ -41,6 +61,23 @@ light blue classic #1da1f2
   padding: 10px 5px 10px 38px;
 }
 
+@media (max-width: 960px) {
+  #xOut {
+    display: flex;
+    height: auto;
+    width: fill;
+    position: relative;
+    background-color: transparent;
+  }
+}
+@media (max-width: 960px) {
+  .xContainer {
+    display: flex;
+    width: 100%;
+    position: relative;
+    background-color: transparent;
+  }
+}
 #xOut:hover {
   color: #1da1f2;
 }
@@ -49,8 +86,18 @@ light blue classic #1da1f2
   display: flex;
   flex-direction: column;
   background-color: #192734;
-  width: auto;
+  widows: 100%;
   height: 12em;
+}
+
+@media (max-width: 960px) {
+  #formMakeTweet {
+    display: flex;
+    place-items: flex-start;
+    height: auto;
+    width: fit-content;
+    position: relative;
+  }
 }
 
 #formDiv {
@@ -70,14 +117,10 @@ light blue classic #1da1f2
 #tweetInput {
   display: flex;
   justify-content: flex-start;
-  /* flex-wrap: wrap; */
-  /* display: inline-block;
-  vertical-align: top; */
   text-align: left;
-  font-size: medium;
-  margin-left: 5em;
+  font-size: 12pt;
+  margin-left: 6em;
   margin-top: -3.5em;
-  /* background-color: #192734; */
   background-color: transparent;
   border: none;
   width: auto;
@@ -85,6 +128,17 @@ light blue classic #1da1f2
   color: whitesmoke;
   text-overflow: contain;
   padding: 5px;
+}
+
+@media (max-width: 960px) {
+  #tagLabel {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10em;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+  }
 }
 
 #tweetInput:active {
@@ -102,36 +156,33 @@ light blue classic #1da1f2
 
 .makeTweetIcons {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 50px;
-  width: auto;
-  /* border-top: 1px solid #8899a6; */
-  padding: 10px 5px 10px 25px;
+  place-items: center;
+  justify-content: space-around;
+  text-align: center;
+  align-content: center;
+  height: auto;
+  width: 100%;
   cursor: pointer;
 }
 
-.iconListMT {
-  display: flex;
-  flex-direction: row;
-}
-
-li > img {
-  padding: 3px 3px 10px 10px;
-  width: 22px;
-  height: auto;
+@media (max-width: 960px) {
+  .makeTweetIcons {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 60%;
+    position: relative;
+    padding-bottom: 5px;
+  }
 }
 
 #submitTweetBtn {
   display: flex;
-  /* margin-top: 190%; */
-  margin-right: 30px;
-  margin-bottom: 5px;
   background-color: #1da1f2;
   color: whitesmoke;
-  width: 100px;
-  height: 3em;
-  padding: 5px;
+  width: fit-content;
+  height: max-content;
+  padding: 1em;
   text-align: center;
   font-size: small;
   font-weight: bolder;
@@ -145,7 +196,6 @@ li > img {
   background-color: #1779b6;
   cursor: pointer;
   text-decoration: none;
-  /* color: inherit; */
 }
 
 #submitTweetBtn:active {
@@ -154,13 +204,11 @@ li > img {
   position: relative;
   top: 1px;
   text-decoration: none;
-  /* color: inherit; */
 }
 
 #submitTweetBtn:focus {
   outline: none;
   text-decoration: none;
-  /* color: inherit; */
 }
 
 #tagLabel {
