@@ -40,7 +40,7 @@ const UserProfileInfo = ({ user }) => {
 
           <p id="bioP">Bio: {bio}</p>
           <NavLink exact to="/maketweet">
-            <p className="tweetButton">Tweet</p>
+            <p className="tweetButton userTweetButton">Tweet</p>
           </NavLink>
         </div>
         <h1 id="userTweetsH1">Tweets</h1>

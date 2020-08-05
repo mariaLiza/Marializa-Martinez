@@ -17,7 +17,7 @@ light blue classic #1da1f2
   position: fixed;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1365px) {
   .sbDiv {
     display: none;
     position: relative;

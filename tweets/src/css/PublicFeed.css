@@ -31,7 +31,19 @@ light blue classic #1da1f2
 @media (max-width: 1355px) {
   .exploreTwitter {
     display: flex;
+    margin: auto;
+    place-items: center;
     margin-top: 1em;
+    position: relative;
+    border: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .exploreTwitter {
+    display: flex;
+    margin-left: 0;
+    align-items: flex-start;
     position: relative;
   }
 }
@@ -54,6 +66,7 @@ light blue classic #1da1f2
 @media (max-width: 1355px) {
   .publicPostsListDiv {
     display: flex;
+    place-items: center;
     margin: auto;
     width: fill;
   }

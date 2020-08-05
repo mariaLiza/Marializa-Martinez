@@ -18,7 +18,7 @@ light blue classic #1da1f2
   margin-top: 5em;
 }
 
-@media (max-width: 1160px) {
+@media (max-width: 1355px) {
   #leftSideDiv {
     display: none;
     position: relative;

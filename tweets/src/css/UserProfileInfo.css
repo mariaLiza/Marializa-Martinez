@@ -123,3 +123,12 @@ light blue classic #1da1f2
 #updateProfileBtn:hover {
   background-color: #1779b6;
 }
+
+@media (max-width: 1354px) {
+  .userTweetButton {
+    display: flex;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    width: 15%;
+  }
+}
