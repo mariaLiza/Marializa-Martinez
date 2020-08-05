@@ -136,7 +136,7 @@ light blue classic #1da1f2
 }
 
 .link:hover {
-  background-color: #39434c;
+  /* background-color: #39434c; */
   text-decoration: none;
 }
 

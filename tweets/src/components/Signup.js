@@ -1,13 +1,12 @@
 import React, { useState, useContext } from "react";
-import axios from "axios";
 import { NavLink, useHistory } from "react-router-dom";
+import { AuthContext } from "../providers/AuthContext";
 import { useInput } from "../util/customHooks";
 import { apiURL } from "../util/apiURL";
 import { signUp } from "../util/firebaseFunctions";
-import "../css/SignUp.css";
+import axios from "axios";
 import whiteBird from "../images/utilityIcons/whiteBird.png";
-import GetDatePicker from "./DatePicker";
-import { AuthContext } from "../providers/AuthContext";
+import "../css/SignUp.css";
 
 const Signup = () => {
   const { currentUser, loading } = useContext(AuthContext);
@@ -17,7 +16,6 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const bio = useInput("");
   const fullName = useInput("");
-  // const profilePic = useInput(null);
   const userName = useInput("");
   const history = useHistory();
   const API = apiURL();
@@ -34,14 +32,8 @@ const Signup = () => {
         username: userName.value,
         bio: bio.value,
       });
-      // if (res.data.user.id === currentUser.uid) {
-      //   res.data.user = currentUser;
-      // }
       setUser(res.data.user[0]);
-      // debugger;
       history.push("/");
-      // console.log(user, "user")
-      // console.log(res.data.user, "resuser")
     } catch (err) {
       setError(err.message);
     }
@@ -50,7 +42,7 @@ const Signup = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="signUpMain">
       <div id="signUpDiv">
         <NavLink exact to="/">
           <img id="bird" src={whiteBird} alt="home" />
@@ -78,14 +70,13 @@ const Signup = () => {
           />{" "}
           <input type="text" {...userName} placeholder="Username" />
           <input type="text" {...fullName} placeholder="Full Name" />
-          <textarea rows="4" cols="40" placeholder="Bio" {...bio}></textarea>
+          <textarea className="bioSU" rows="4" cols="40" placeholder="Bio" {...bio}></textarea>
           <button id="nextBtn" type="submit">
             Next
           </button>
         </form>
-        {/* <GetDatePicker /> */}
       </div>
-    </>
+    </div>
   );
 };
 
