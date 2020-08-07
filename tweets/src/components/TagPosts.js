@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { apiURL } from "../util/apiURL";
 import { AuthContext } from "../providers/AuthContext";
 import axios from "axios";
-import "../css/TagPosts.css"
+import "../css/TagPosts.css";
 
 const TagPosts = () => {
   const API = apiURL();
@@ -43,7 +43,10 @@ const TagPosts = () => {
               alt="profile image"
             />
           </p>
-          <p id="userNameP">@{post.username}</p>
+          <a href={`/users/${post.username}`}>
+            <p id="userNameP">@{post.username}</p>
+          </a>
+
           <p id="dateStampP">{fixDate(post.created_at)}</p>
         </div>
         <p id="postBodyP">{post.body}</p>

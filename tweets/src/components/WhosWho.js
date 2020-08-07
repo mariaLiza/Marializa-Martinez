@@ -11,7 +11,6 @@ const WhosWho = () => {
   const API = apiURL();
   const [users, setUsers] = useState([]);
   const history = useHistory();
-  //   const [username, setUserName] = useState("");
   const userNameRedirect = (username) => history.push(`/users/${username}`);
 
   useEffect(() => {
@@ -62,13 +61,11 @@ const WhosWho = () => {
   console.log(users);
 
   return (
-    
-      <div className="whosContainer">
-        <h1 className="whoH1">Who's Who</h1>
-        {usersDisplay}
+    <div className="whosContainer">
+      <h1 className="whoH1">Who's Who</h1>
+      {usersDisplay}
       <Footer />
-      </div>
-    
+    </div>
   );
 };
 

@@ -47,6 +47,7 @@ const PublicFeed = () => {
             alt="profile image"
           />
         </p>
+        <a href={`/users/${post.username}`}></a>
         <p id="userNamePublicP">@{post.username}</p>
         <p id="dateStampPublicP">{fixDate(post.created_at)}</p>
         </div>

@@ -51,12 +51,14 @@ const UserPosts = () => {
               alt="profile image"
             />
           </p>
-          <p id="userNameP">@{post.username}</p>
+          <a href={`/users/${post.username}`}>
+            <p id="userNameP">@{post.username}</p>
+          </a>
+
           <p id="dateStampP">{fixDate(post.created_at)}</p>
         </div>
         <p id="postBodyP">{post.body}</p>
         {post.tags[0] ? <p id="tag">#{post.tags[0]}</p> : <p></p>}
-        {/* <p id="tag">#{post.tags[0]}</p> */}
       </div>
     );
   });
@@ -66,7 +68,6 @@ const UserPosts = () => {
   return (
     <>
       <div id="userPostsDiv">
-        
         <div>{userPostList}</div>
       </div>
     </>

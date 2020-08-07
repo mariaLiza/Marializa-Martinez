@@ -46,7 +46,10 @@ const WhosPosts = ({ username }) => {
                 alt="profile image"
               />
             </p>
-            <p id="userNameP">@{post.username}</p>
+            <a href={`/users/${post.username}`}>
+              <p id="userNameP">@{post.username}</p>
+            </a>
+
             <p id="dateStampP">{fixDate(post.created_at)}</p>
           </div>
           <p id="postBodyP">{post.body}</p>

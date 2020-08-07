@@ -92,6 +92,14 @@ light blue classic #1da1f2
   color: whitesmoke;
 }
 
+#userNameP:hover {
+  color: #1da1f2;
+}
+
+#userNameP:active {
+  color: #1da1f2;
+}
+
 #dateStampP {
   font-size: 10pt;
 }

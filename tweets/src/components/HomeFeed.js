@@ -46,7 +46,10 @@ const HomeFeed = () => {
               alt="profile image"
             />
           </p>
-          <p id="userNameP">@{post.username}</p>
+          <a href={`/users/${post.username}`}>
+            <p id="userNameP">@{post.username}</p>
+          </a>
+
           <p id="dateStampP">{fixDate(post.created_at)}</p>
         </div>
         <p id="allPostBodyP">{post.body}</p>
@@ -60,9 +63,9 @@ const HomeFeed = () => {
   return (
     <div className="publicPostsListDiv">
       <div className="exploreTwitter">
-      <NavLink exact to="/maketweet">
-        <p className="tweetButton">Tweet</p>
-      </NavLink>
+        <NavLink exact to="/maketweet">
+          <p className="tweetButton">Tweet</p>
+        </NavLink>
         <h2 id="exploreH2">Explore</h2>
         <p id="publicHappeningNow">Happening Right Now</p>
       </div>
