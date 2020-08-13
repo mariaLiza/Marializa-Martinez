@@ -40,7 +40,6 @@ light blue classic #1da1f2
 @media (max-width: 1355px) {
   #userPostsDiv {
     display: flex;
-    flex-wrap: wrap;
     text-align: center;
     margin: auto;
     place-items: center;
