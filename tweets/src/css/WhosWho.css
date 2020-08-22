@@ -68,3 +68,11 @@ light blue classic #1da1f2
   cursor: pointer;
   width: auto;
 }
+
+@media (max-width: 335px) {
+  .whoProfile {
+  place-items: center;
+  margin-left: 4em;
+  }
+
+}

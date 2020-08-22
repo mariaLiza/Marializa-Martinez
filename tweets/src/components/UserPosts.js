@@ -39,7 +39,7 @@ const UserPosts = () => {
 
   let userPostList = userPosts.map((post, i) => {
     return (
-      <div key={i} className="userPostsListDiv">
+      <div key={i} className="userPostsListDiv whoProfile">
         <div className="rowContainer">
           <p id="picP">
             {" "}

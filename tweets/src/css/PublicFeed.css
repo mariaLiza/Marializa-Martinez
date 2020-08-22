@@ -68,7 +68,7 @@ light blue classic #1da1f2
     display: flex;
     place-items: center;
     margin: auto;
-    width: fill;
+    width: stretch;
   }
 }
 

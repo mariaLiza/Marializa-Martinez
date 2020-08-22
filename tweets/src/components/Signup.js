@@ -54,7 +54,7 @@ const Signup = () => {
             Email
           </label>
           <input
-            id="email"
+            className="suInputs"
             value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}
           />
@@ -63,13 +63,19 @@ const Signup = () => {
           </label>
           <input
             type="password"
-            id="password"
+            className="suInputs"
             value={password}
             autoComplete="on"
             onChange={(e) => setPassword(e.currentTarget.value)}
           />{" "}
-          <input type="text" {...userName} placeholder="Username" />
-          <input type="text" {...fullName} placeholder="Full Name" />
+          <label className="suLabel" id="emLabel">
+            Username
+          </label>
+          <input type="text" {...userName} className="suInputs" />
+          <label className="suLabel" id="emLabel">
+            Full Name
+          </label>
+          <input type="text" {...fullName} className="suInputs" />
           <textarea className="bioSU" rows="4" cols="40" placeholder="Bio" {...bio}></textarea>
           <button id="nextBtn" type="submit">
             Next

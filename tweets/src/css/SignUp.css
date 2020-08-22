@@ -72,8 +72,7 @@ light blue classic #1da1f2
 @media (max-width: 475px) {
   .form {
     display: flex;
-    width: 50%;
-    place-items: center;
+    width: 75%;
     position: relative;
     background-color: transparent;
   }
@@ -84,8 +83,8 @@ light blue classic #1da1f2
   width: auto;
   padding-left: 10px;
   padding-right: 10px;
-  margin-bottom: 40px;
-  background-color: #192734;
+  margin-bottom: 1.5em;
+  background-color: whitesmoke;
   border-radius: 3px;
   font-size: 1em;
   color: #8899a6;
@@ -103,7 +102,7 @@ input:focus {
 .bioSU {
   display: flex;
   margin: auto;
-  width: 50%;
+  width: 100%;
   height: min-content;
 }
 

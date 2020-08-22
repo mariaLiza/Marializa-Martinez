@@ -34,7 +34,7 @@ const WhosPosts = ({ username }) => {
   let usersPostList = usersPosts.map((post, i) => {
     if (username === post.username)
       return (
-        <div key={i} className="userPostsListDiv">
+        <div key={i} className="userPostsListDiv whoProfile">
           <div className="rowContainer">
             <p id="picP">
               {" "}
