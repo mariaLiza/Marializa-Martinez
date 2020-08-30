@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthContext";
 import { apiURL } from "../util/apiURL";
 import axios from "axios";
-// import profilePic from "../images/sidebarIcons/profile white.png";
 import "../css/UserPosts.css";
 
 const UserPosts = () => {
@@ -12,6 +12,7 @@ const UserPosts = () => {
   const [postTag, setPostTag] = useState("");
 
   useEffect(() => {
+    if (loading) return <div>Loading...</div>;
     const getUserPosts = async () => {
       try {
         let res = await axios({
@@ -22,8 +23,6 @@ const UserPosts = () => {
           },
         });
         setUserPosts(res.data.posts);
-
-        // debugger;
       } catch (err) {
         console.log(err);
       }
@@ -51,9 +50,9 @@ const UserPosts = () => {
               alt="profile image"
             />
           </p>
-          <a href={`/users/${post.username}`}>
+          <Link exact to={`/users/${post.username}`}>
             <p id="userNameP">@{post.username}</p>
-          </a>
+          </Link>
 
           <p id="dateStampP">{fixDate(post.created_at)}</p>
         </div>
@@ -62,8 +61,6 @@ const UserPosts = () => {
       </div>
     );
   });
-
-  if (loading) return <div>Loading...</div>;
 
   return (
     <>

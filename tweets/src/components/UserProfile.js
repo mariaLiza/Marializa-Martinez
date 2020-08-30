@@ -14,6 +14,7 @@ const UserProfile = () => {
   const { token, currentUser, loading } = useContext(AuthContext);
 
   useEffect(() => {
+    if (loading) return <div>Loading...</div>;
     const fetchUserById = async () => {
       let res = await axios({
         method: "get",
@@ -27,10 +28,7 @@ const UserProfile = () => {
       console.log(res.data.user);
     };
     fetchUserById();
-    if (loading) return <div>Loading...</div>;
   }, []);
-
-  if (loading) return <div>Loading...</div>;
 
   return (
     <div className="userProfileMainDiv">

@@ -11,40 +11,43 @@ const UserProfileInfo = ({ user }) => {
   const { currentUser, token, loading } = useContext(AuthContext);
   const API = apiURL();
 
-  if (loading) return <div>Loading...</div>;
   return (
     <>
-      <div className="userInfoDiv" id="divUserInfo">
-        <h1 id="userH1">{username}</h1>
-        <div id="userInfoContainer">
-          <img id="backgroundLogo" src={banner} alt={twitterLogo} />
-          <div id="updateDiv">
-            {" "}
-            <img
-              src={
-                "https://ya-webdesign.com/transparent250_/blank-profile-picture-png-2.png"
-              }
-              alt="user"
-              id="userProfilePic"
-            />
-            {/* <button type="submit" id="updateProfileBtn">
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <div className="userInfoDiv" id="divUserInfo">
+          <h1 id="userH1">{username}</h1>
+          <div id="userInfoContainer">
+            <img id="backgroundLogo" src={banner} alt={twitterLogo} />
+            <div id="updateDiv">
+              {" "}
+              <img
+                src={
+                  "https://ya-webdesign.com/transparent250_/blank-profile-picture-png-2.png"
+                }
+                alt="user"
+                id="userProfilePic"
+              />
+              {/* <button type="submit" id="updateProfileBtn">
               Edit Profile
             </button> */}
-          </div>
+            </div>
 
-          <div id="userNames">
-            <h2 id="userNameH2">@{username}</h2>
-            <p>{email}</p>
-            <p>Fullname: {fullname}</p>
-          </div>
+            <div id="userNames">
+              <h2 id="userNameH2">@{username}</h2>
+              <p>{email}</p>
+              <p>Fullname: {fullname}</p>
+            </div>
 
-          <p id="bioP">Bio: {bio}</p>
-          <NavLink exact to="/maketweet">
-            <p className="tweetButton userTweetButton">Tweet</p>
-          </NavLink>
+            <p id="bioP">Bio: {bio}</p>
+            <NavLink exact to="/maketweet">
+              <p className="tweetButton userTweetButton">Tweet</p>
+            </NavLink>
+          </div>
+          <h1 id="userTweetsH1">Tweets</h1>
         </div>
-        <h1 id="userTweetsH1">Tweets</h1>
-      </div>
+      )}
     </>
   );
 };
