@@ -11,6 +11,7 @@ const PublicFeed = () => {
   const [publicFeed, setPublicFeed] = useState([]);
 
   useEffect(() => {
+    if (loading) return <div>Loading...</div>;
     const showAllPosts = async () => {
       try {
         let res = await axios({
@@ -23,7 +24,6 @@ const PublicFeed = () => {
       }
     };
     showAllPosts();
-    if (loading) return <div>Loading...</div>;
   }, []);
 
   const fixDate = (number) => {
@@ -36,20 +36,20 @@ const PublicFeed = () => {
     if (loading) return <div>Loading...</div>;
     return (
       <div key={i} className="userPostsListDiv">
-      <div className="rowContainer">
-        <p id="picP">
-          {" "}
-          <img
-            id="postPublicProfPic"
-            src={
-              "https://ya-webdesign.com/transparent250_/blank-profile-picture-png-2.png"
-            }
-            alt="profile image"
-          />
-        </p>
-        <a href={`/users/${post.username}`}></a>
-        <p id="userNamePublicP">@{post.username}</p>
-        <p id="dateStampPublicP">{fixDate(post.created_at)}</p>
+        <div className="rowContainer">
+          <p id="picP">
+            {" "}
+            <img
+              id="postPublicProfPic"
+              src={
+                "https://ya-webdesign.com/transparent250_/blank-profile-picture-png-2.png"
+              }
+              alt="profile image"
+            />
+          </p>
+          <a href={`/users/${post.username}`}></a>
+          <p id="userNamePublicP">@{post.username}</p>
+          <p id="dateStampPublicP">{fixDate(post.created_at)}</p>
         </div>
         <p id="allPostBodyPublicP">{post.body}</p>
         {post.tag ? <p id="tag">#{post.tag}</p> : <p></p>}
@@ -64,7 +64,6 @@ const PublicFeed = () => {
         <p id="publicHappeningNow">Happening Right Now</p>
       </div>
       <div className="divHolder">{publicFeedList}</div>
-      
     </div>
   );
 };

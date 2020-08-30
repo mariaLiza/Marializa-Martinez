@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import axios from "axios";
 import { apiURL } from "../util/apiURL";
 import { AuthContext } from "../providers/AuthContext";
@@ -11,6 +11,7 @@ const HomeFeed = () => {
   const [feed, setFeed] = useState([]);
 
   useEffect(() => {
+    if (loading) return <div>Loading...</div>;
     const showAllPosts = async () => {
       try {
         let res = await axios({
@@ -23,7 +24,6 @@ const HomeFeed = () => {
       }
     };
     showAllPosts();
-    if (loading) return <div>Loading...</div>;
   }, []);
 
   const fixDate = (number) => {
@@ -46,9 +46,9 @@ const HomeFeed = () => {
               alt="profile image"
             />
           </p>
-          <a href={`/users/${post.username}`}>
+          <Link exact to={`/users/${post.username}`}>
             <p id="userNameP">@{post.username}</p>
-          </a>
+          </Link>
 
           <p id="dateStampP">{fixDate(post.created_at)}</p>
         </div>

@@ -14,6 +14,7 @@ const WhosWho = () => {
   const userNameRedirect = (username) => history.push(`/users/${username}`);
 
   useEffect(() => {
+    if (loading) return <div>Loading...</div>;
     getAllUsers();
   }, []);
 
